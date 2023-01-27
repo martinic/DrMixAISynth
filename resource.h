@@ -68,7 +68,7 @@
 // PLUG_MFR_ID and PLUG_UNIQUE_ID.
 
 // Plugin I/O config.
-#define PLUG_CHANNEL_IO "0-1"
+#define PLUG_CHANNEL_IO "0-2"
 
 // Latency in samples.
 #define PLUG_LATENCY 0

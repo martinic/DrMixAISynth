@@ -101,5 +101,7 @@ void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *c
     offset = next;
   }
 
+  memcpy(outputs[1], outputs[0], samples * sizeof(double));
+
   m_midi_queue.Flush(samples);
 }
