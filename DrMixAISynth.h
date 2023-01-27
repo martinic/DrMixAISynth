@@ -1,5 +1,7 @@
 #include "IPlug/IPlug_include_in_plug_hdr.h"
 
+#include <math.h>
+
 #include "WDL/wdltypes.h"
 #include "WDL/ptrlist.h"
 
@@ -19,7 +21,7 @@ public:
 
     for (int i = 0; i < samples; i++)
     {
-      output[i] = sin(m_phase);
+      output[i] = sin(2*M_PI * m_phase);
       m_phase += phase_step;
     }
   }

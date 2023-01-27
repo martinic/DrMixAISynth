@@ -3,7 +3,7 @@
 PROJECT = DrMixAISynth
 OUTFILE = Doctor Mix AI Synth
 
-CFLAGS = /fp:fast /I . /c /Fd"$(OUTDIR)/" /Zi /W3 /WX /D _CRT_SECURE_NO_WARNINGS /D _CRT_NONSTDC_NO_WARNINGS /MP /nologo
+CFLAGS = /fp:fast /D _USE_MATH_DEFINES /I . /c /Fd"$(OUTDIR)/" /Zi /W3 /WX /D _CRT_SECURE_NO_WARNINGS /D _CRT_NONSTDC_NO_WARNINGS /MP /nologo
 CPPFLAGS = /EHsc $(CFLAGS)
 
 RCFLAGS = /nologo
