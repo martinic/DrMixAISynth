@@ -1,4 +1,5 @@
 #include "IPlug/IPlug_include_in_plug_hdr.h"
+#include "IPlug/IMidiQueue.h"
 
 #include <math.h>
 
@@ -45,11 +46,14 @@ public:
   ~DrMixAISynth() { delete m_sine; }
 
   void SetSampleRate(double rate);
+  void SetBlockSize(int size);
 
   void OnParamChange(int index);
   void SetFrequency(double frequency) { m_sine->SetFrequency(frequency); }
 
   void ProcessMidiMsg(const IMidiMsg *msg);
+  void ProcessMidiQueue(const IMidiMsg *msg);
+
   void ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples);
 
   void Process(double *output, int samples)
@@ -59,5 +63,7 @@ public:
 
 private:
   SineSynth *m_sine;
+
+  IMidiQueue m_midi_queue;
   int m_note_on;
 };

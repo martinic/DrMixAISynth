@@ -17,6 +17,12 @@ void DrMixAISynth::SetSampleRate(double rate)
   m_sine->SetSampleRate(rate);
 }
 
+void DrMixAISynth::SetBlockSize(int size)
+{
+  IPlug::SetBlockSize(size);
+  m_midi_queue.Resize(GetBlockSize(), false);
+}
+
 void DrMixAISynth::OnParamChange(int index)
 {
   switch (index)
@@ -31,6 +37,11 @@ void DrMixAISynth::OnParamChange(int index)
 }
 
 void DrMixAISynth::ProcessMidiMsg(const IMidiMsg *msg)
+{
+  m_midi_queue.Add(msg);
+}
+
+void DrMixAISynth::ProcessMidiQueue(const IMidiMsg *msg)
 {
   switch (msg->mStatus >> 4)
   {
@@ -58,8 +69,37 @@ void DrMixAISynth::ProcessMidiMsg(const IMidiMsg *msg)
 
 void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples)
 {
-  if (m_note_on >= 0)
-    Process(outputs[0], samples);
-  else
-    memset(outputs[0], 0, samples * sizeof(double));
+  for (int offset = 0; offset < samples;)
+  {
+    int next;
+
+    for (;;)
+    {
+      if (m_midi_queue.Empty())
+      {
+        next = samples;
+        break;
+      }
+
+      const IMidiMsg* msg = m_midi_queue.Peek();
+      next = msg->mOffset;
+
+      if (next > offset) break;
+
+      ProcessMidiQueue(msg);
+      m_midi_queue.Remove();
+    }
+
+    double *output = &outputs[0][offset];
+    int block = next - offset;
+
+    if (m_note_on >= 0)
+      Process(output, block);
+    else
+      memset(output, 0, block * sizeof(double));
+
+    offset = next;
+  }
+
+  m_midi_queue.Flush(samples);
 }
