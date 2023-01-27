@@ -44,6 +44,8 @@ public:
   DrMixAISynth(void *instance);
   ~DrMixAISynth() { delete m_sine; }
 
+  void SetSampleRate(double rate);
+
   void OnParamChange(int index);
   void SetFrequency(double frequency) { m_sine->SetFrequency(frequency); }
 

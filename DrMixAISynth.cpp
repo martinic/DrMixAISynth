@@ -8,6 +8,12 @@ DrMixAISynth::DrMixAISynth(void *instance):
   AddParam(kParamFrequency, new IDoubleParam("Freq", 440, 20, 20000, 0, "Hz"));
 }
 
+void DrMixAISynth::SetSampleRate(double rate)
+{
+  IPlug::SetSampleRate(rate);
+  m_sine->SetSampleRate(rate);
+}
+
 void DrMixAISynth::OnParamChange(int index)
 {
   switch (index)
