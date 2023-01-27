@@ -1,8 +1,7 @@
 #include "WDL/wdltypes.h"
 #include "WDL/ptrlist.h"
-#include "WDL/synth.h"
 
-class SineSynth : public WDL_Synth
+class SineSynth
 {
 public:
   SineSynth() : m_frequency(0), m_phase(0) {}
