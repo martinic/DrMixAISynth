@@ -49,6 +49,7 @@ public:
   void OnParamChange(int index);
   void SetFrequency(double frequency) { m_sine->SetFrequency(frequency); }
 
+  void ProcessMidiMsg(const IMidiMsg *msg);
   void ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples);
 
   void Process(double *output, int samples)
@@ -58,4 +59,5 @@ public:
 
 private:
   SineSynth *m_sine;
+  int m_note_on;
 };
