@@ -4,7 +4,10 @@
 class SineSynth
 {
 public:
-  SineSynth() : m_frequency(0), m_phase(0) {}
+  SineSynth() : m_sample_rate(44100), m_frequency(0), m_phase(0) {}
+
+  void SetSampleRate(double rate) { m_sample_rate = rate; }
+  double GetSampleRate() { return m_sample_rate; }
 
   void SetFrequency(double frequency) { m_frequency = frequency; }
 
@@ -20,6 +23,7 @@ public:
   }
 
 private:
+  double m_sample_rate;
   double m_frequency;
   double m_phase;
 };
