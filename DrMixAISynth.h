@@ -30,12 +30,19 @@ private:
   double m_phase;
 };
 
+enum EParams
+{
+  kParamFrequency = 0,
+  kNumParams
+};
+
 class DrMixAISynth : public IPlug
 {
 public:
   DrMixAISynth(void *instance);
   ~DrMixAISynth() { delete m_sine; }
 
+  void OnParamChange(int index);
   void SetFrequency(double frequency) { m_sine->SetFrequency(frequency); }
 
   void ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples);
