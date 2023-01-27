@@ -1,3 +1,5 @@
+#include "IPlug/IPlug_include_in_plug_hdr.h"
+
 #include "WDL/wdltypes.h"
 #include "WDL/ptrlist.h"
 
@@ -28,13 +30,15 @@ private:
   double m_phase;
 };
 
-class MySynth : public WDL_Synth
+class DrMixAISynth : public IPlug
 {
 public:
-  MySynth() : m_sine(new SineSynth()) {}
-  ~MySynth() { delete m_sine; }
+  DrMixAISynth(void *instance);
+  ~DrMixAISynth() { delete m_sine; }
 
   void SetFrequency(double frequency) { m_sine->SetFrequency(frequency); }
+
+  void ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples);
 
   void Process(double *output, int samples)
   {
