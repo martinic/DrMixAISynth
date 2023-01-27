@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AudioComponents</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>Doctor Mix AI Synth AU</string>
+			<key>factoryFunction</key>
+			<string>DrMixAISynth_Factory</string>
+			<key>manufacturer</key>
+			<string>Mnic</string>
+			<key>name</key>
+			<string>Martinic: Doctor Mix AI Synth</string>
+			<key>sandboxSafe</key>
+			<true/>
+			<key>subtype</key>
+			<string>dra1</string>
+			<key>type</key>
+			<string>aumu</string>
+			<key>version</key>
+			<integer>0x00000001</integer>
+		</dict>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PROJECT_NAME:rfc1034identifier)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string>dra1</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>$(INFOPLIST_KEY_NSHumanReadableCopyright)</string>
+	<key>NSPrincipalClass</key>
+	<string>DrMixAISynth_View</string>
+</dict>
+</plist>

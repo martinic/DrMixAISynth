@@ -1,0 +1,26 @@
+.gitattributes text=auto
+
+*.c   text=auto
+*.cpp text=auto
+*.exp text=auto
+*.h   text=auto
+*.mm  text=auto
+*.rc  text=auto
+*.txt text=auto
+
+*.cmd text eol=crlf
+*.sh  text eol=lf
+
+# Windows makefile
+Makefile text=auto
+
+# Visual Studio project
+*.sln             text eol=crlf
+*.vcxproj         text eol=crlf
+*.vcxproj.filters text eol=crlf
+
+# Xcode project
+*.pbxproj    text eol=lf
+*.plist      text=auto
+*.xcscheme   text eol=lf
+*.xcsettings text eol=lf

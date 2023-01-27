@@ -1,0 +1,59 @@
+#include "resource.h"
+#include <windows.h>
+
+// Version info.
+
+#ifdef VERSIONINFO_VERSION
+
+1 VERSIONINFO
+
+FILEVERSION VERSIONINFO_VERSION
+
+PRODUCTVERSION VERSIONINFO_VERSION
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+	FILEFLAGS (VS_FF_PRERELEASE | VS_FF_DEBUG)
+#elif defined(VERSIONINFO_PRERELEASE)
+	FILEFLAGS VS_FF_PRERELEASE
+#else
+	FILEFLAGS 0
+#endif
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_DLL
+FILESUBTYPE VFT2_UNKNOWN
+
+BEGIN
+	BLOCK "StringFileInfo"
+
+	BEGIN
+		// U.S. English (0x0409), multilingual charset (0x04E4 == 1252).
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "CompanyName",      PLUG_MFR
+			VALUE "FileDescription",  PLUG_NAME
+			VALUE "FileVersion",      VERSIONINFO_STR
+			VALUE "InternalName",     VERSIONINFO_ORG_FILE
+
+			#ifdef VERSIONINFO_COPYRIGHT
+			VALUE "LegalCopyright",   "© " VERSIONINFO_COPYRIGHT
+			#endif
+
+			VALUE "OriginalFilename", VERSIONINFO_ORG_FILE
+			#ifdef CLAP_API
+				".clap"
+			#else
+				".dll"
+			#endif
+
+			VALUE "ProductName",      PLUG_NAME
+			VALUE "ProductVersion",   VERSIONINFO_STR
+		END
+	END
+
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x0409, 0x04E4
+	END
+END
+
+#endif // VERSIONINFO
