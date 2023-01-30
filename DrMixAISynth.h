@@ -16,6 +16,8 @@ public:
 
   void SetFrequency(double frequency) { m_frequency = frequency; }
 
+  void Reset() { m_phase = 0; }
+
   void Process(double *output, int samples)
   {
     double phase_step = m_frequency / GetSampleRate();
@@ -50,6 +52,8 @@ public:
 
   void OnParamChange(int index);
   void SetFrequency(double frequency) { m_sine->SetFrequency(frequency); }
+
+  void Reset();
 
   void ProcessMidiMsg(const IMidiMsg *msg);
   void ProcessMidiQueue(const IMidiMsg *msg);

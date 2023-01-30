@@ -36,6 +36,11 @@ void DrMixAISynth::OnParamChange(int index)
   }
 }
 
+void DrMixAISynth::Reset()
+{
+  m_sine->Reset();
+}
+
 void DrMixAISynth::ProcessMidiMsg(const IMidiMsg *msg)
 {
   m_midi_queue.Add(msg);
