@@ -26,6 +26,7 @@ public:
     {
       output[i] = sin(2*M_PI * m_phase);
       m_phase += phase_step;
+      m_phase -= (double)(int)m_phase;
     }
   }
 
