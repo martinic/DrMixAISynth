@@ -69,6 +69,14 @@ void DrMixAISynth::ProcessMidiQueue(const IMidiMsg *msg)
       if (note == m_note_on) m_note_on = -1;
       break;
     }
+
+    case IMidiMsg::kControlChange:
+    {
+      int cc = msg->mData1;
+
+      if (cc == IMidiMsg::kAllNotesOff) m_note_on = -1;
+      break;
+    }
   }
 }
 
