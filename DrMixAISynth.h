@@ -44,30 +44,37 @@ public:
   LowPassFilter(float cutoffFrequency, float resonance, float sampleRate) :
     m_cutoffFrequency(cutoffFrequency),
     m_resonance(resonance),
-    m_sampleRate(sampleRate)
+    m_sampleRate(sampleRate),
+    m_cutoffFrequencyTarget(cutoffFrequency),
+    m_resonanceTarget(resonance)
   {
     reset();
+    calculateSmoothingFactor();
     calculateCoefficients();
   }
 
-  void setCutoffFrequency(float cutoffFrequency) {
-    m_cutoffFrequency = cutoffFrequency;
-    calculateCoefficients();
-  }
-
-  void setResonance(float resonance) {
-    m_resonance = resonance;
-    calculateCoefficients();
-  }
+  void setCutoffFrequency(float cutoffFrequency) { m_cutoffFrequencyTarget = cutoffFrequency; }
+  void setResonance(float resonance) { m_resonanceTarget = resonance; }
 
   void setSampleRate(float sampleRate) {
     m_sampleRate = sampleRate;
 
     reset();
+    calculateSmoothingFactor();
     calculateCoefficients();
   }
 
   float process(float input) {
+    // Smooth cutoff frequency/resonance changes
+    if (m_cutoffFrequency != m_cutoffFrequencyTarget ||
+        m_resonance != m_resonanceTarget)
+    {
+      m_cutoffFrequency = applySmoothing(m_cutoffFrequency, m_cutoffFrequencyTarget);
+      m_resonance = applySmoothing(m_resonance, m_resonanceTarget);
+
+      calculateCoefficients();
+    }
+
     // Calculate output using Direct Form I structure
     float output = m_b0 * input + m_b1 * m_x1 + m_b2 * m_x2 - m_a1 * m_y1 - m_a2 * m_y2;
     
@@ -86,6 +93,14 @@ public:
   }
 
 private:
+  float applySmoothing(float currentValue, float targetValue) {
+    return (targetValue - currentValue) * m_smoothingFactor + currentValue;
+  }
+
+  void calculateSmoothingFactor() {
+    m_smoothingFactor = 1.0 - exp(-5.0 / (0.100 /* 100 ms */ * m_sampleRate));
+  }
+
   void calculateCoefficients() {
     // Calculate filter coefficients based on cutoff frequency and resonance
     float omega = 2.0 * M_PI * m_cutoffFrequency / m_sampleRate;
@@ -104,6 +119,12 @@ private:
   float m_cutoffFrequency;
   float m_resonance;
   float m_sampleRate;
+
+  // Cutoff frequency/resonance smoothing
+  float m_cutoffFrequencyTarget;
+  float m_resonanceTarget;
+  float m_smoothingFactor;
+
   float m_x1, m_x2, m_y1, m_y2; // State variables
   float m_b0, m_b1, m_b2, m_a1, m_a2; // Filter coefficients
 };
