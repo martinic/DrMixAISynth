@@ -28,9 +28,7 @@ public:
   float getNextSample() {
     float output = 2.0 * m_phase - 1.0; // Output a sawtooth wave between -1 and 1
     m_phase += m_phaseIncrement;
-    if (m_phase >= 1.0) {
-      m_phase -= 1.0;
-    }
+    m_phase -= (int)m_phase;
     return output;
   }
 
