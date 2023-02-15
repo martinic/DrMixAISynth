@@ -41,8 +41,30 @@ private:
 
 class LowPassFilter {
 public:
-  LowPassFilter(float cutoffFrequency, float resonance) : m_cutoffFrequency(cutoffFrequency), m_resonance(resonance) {
+  LowPassFilter(float cutoffFrequency, float resonance, float sampleRate) :
+    m_cutoffFrequency(cutoffFrequency),
+    m_resonance(resonance),
+    m_sampleRate(sampleRate)
+  {
     reset();
+    calculateCoefficients();
+  }
+
+  void setCutoffFrequency(float cutoffFrequency) {
+    m_cutoffFrequency = cutoffFrequency;
+    calculateCoefficients();
+  }
+
+  void setResonance(float resonance) {
+    m_resonance = resonance;
+    calculateCoefficients();
+  }
+
+  void setSampleRate(float sampleRate) {
+    m_sampleRate = sampleRate;
+
+    reset();
+    calculateCoefficients();
   }
 
   float process(float input) {
@@ -61,9 +83,12 @@ public:
   void reset() {
     // Reset state variables to 0
     m_x1 = m_x2 = m_y1 = m_y2 = 0.0;
+  }
 
+private:
+  void calculateCoefficients() {
     // Calculate filter coefficients based on cutoff frequency and resonance
-    float omega = 2.0 * M_PI * m_cutoffFrequency;
+    float omega = 2.0 * M_PI * m_cutoffFrequency / m_sampleRate;
     float alpha = sin(omega) / (2.0 * m_resonance);
     float cosw = cos(omega);
     float a0inv = 1.0 / (1.0 + alpha);
@@ -74,9 +99,9 @@ public:
     m_a2 = (1.0 - alpha) * a0inv;
   }
 
-private:
   float m_cutoffFrequency;
   float m_resonance;
+  float m_sampleRate;
   float m_x1, m_x2, m_y1, m_y2; // State variables
   float m_b0, m_b1, m_b2, m_a1, m_a2; // Filter coefficients
 };
