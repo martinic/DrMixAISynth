@@ -6,6 +6,29 @@
 #include "WDL/wdltypes.h"
 #include "WDL/ptrlist.h"
 
+class SawtoothOscillator {
+public:
+  SawtoothOscillator(float frequency, float sampleRate) : m_frequency(frequency), m_sampleRate(sampleRate) {
+    m_phase = 0.0;
+    m_phaseIncrement = frequency / sampleRate;
+  }
+
+  float getNextSample() {
+    float output = 2.0 * m_phase - 1.0; // Output a sawtooth wave between -1 and 1
+    m_phase += m_phaseIncrement;
+    if (m_phase >= 1.0) {
+      m_phase -= 1.0;
+    }
+    return output;
+  }
+
+private:
+  float m_frequency;
+  float m_sampleRate;
+  float m_phase;
+  float m_phaseIncrement;
+};
+
 class SineSynth
 {
 public:
