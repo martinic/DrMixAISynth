@@ -8,7 +8,8 @@ DrMixAISynth::DrMixAISynth(void *instance):
   m_synth(new SawtoothSynth()),
   m_note_on(-1)
 {
-  AddParam(kParamFrequency, new IDoubleParam("Freq", 440, 20, 20000, 0, "Hz"));
+  AddParam(kParamCutoffFrequency, new IDoubleParam("Cutoff", 20000, 20, 20000, 0, "Hz"));
+  AddParam(kParamResonance, new IDoubleParam("Resonance", 0.5, 0.5, 4.0, 1));
 }
 
 void DrMixAISynth::SetSampleRate(double rate)
@@ -27,10 +28,17 @@ void DrMixAISynth::OnParamChange(int index)
 {
   switch (index)
   {
-    case kParamFrequency:
+    case kParamCutoffFrequency:
     {
-      double freq = GetParam<IDoubleParam>(index)->Value();
-      // SetFrequency(freq);
+      double cutoff = GetParam<IDoubleParam>(index)->Value();
+      SetCutoffFrequency(cutoff);
+      break;
+    }
+
+    case kParamResonance:
+    {
+      double resonance = GetParam<IDoubleParam>(index)->Value();
+      SetResonance(resonance);
       break;
     }
   }

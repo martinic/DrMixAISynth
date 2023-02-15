@@ -121,6 +121,8 @@ public:
   }
 
   void SetFrequency(double frequency) { m_sawtooth.setFrequency(frequency); }
+  void SetCutoffFrequency(double cutoff) { m_filter.setCutoffFrequency(cutoff); }
+  void SetResonance(double resonance) { m_filter.setResonance(resonance); }
 
   void Reset()
   {
@@ -146,7 +148,9 @@ private:
 
 enum EParams
 {
-  kParamFrequency = 0,
+  kParamCutoffFrequency = 0,
+  kParamResonance,
+
   kNumParams
 };
 
@@ -160,7 +164,10 @@ public:
   void SetBlockSize(int size);
 
   void OnParamChange(int index);
+
   void SetFrequency(double frequency) { m_synth->SetFrequency(frequency); }
+  void SetCutoffFrequency(double cutoff) { m_synth->SetCutoffFrequency(cutoff); }
+  void SetResonance(double resonance) { m_synth->SetResonance(resonance); }
 
   void Reset();
 
