@@ -39,6 +39,48 @@ private:
   float m_phaseIncrement;
 };
 
+class LowPassFilter {
+public:
+  LowPassFilter(float cutoffFrequency, float resonance) : m_cutoffFrequency(cutoffFrequency), m_resonance(resonance) {
+    reset();
+  }
+
+  float process(float input) {
+    // Calculate output using Direct Form II structure
+    float output = m_b0 * input + m_b1 * m_x1 + m_b2 * m_x2 - m_a1 * m_y1 - m_a2 * m_y2;
+    
+    // Update state variables
+    m_x2 = m_x1;
+    m_x1 = input;
+    m_y2 = m_y1;
+    m_y1 = output;
+
+    return output;
+  }
+
+  void reset() {
+    // Reset state variables to 0
+    m_x1 = m_x2 = m_y1 = m_y2 = 0.0;
+
+    // Calculate filter coefficients based on cutoff frequency and resonance
+    float omega = 2.0 * M_PI * m_cutoffFrequency;
+    float alpha = sin(omega) / (2.0 * m_resonance);
+    float cosw = cos(omega);
+    float a0inv = 1.0 / (1.0 + alpha);
+    m_b0 = (1.0 - cosw) / 2.0 * a0inv;
+    m_b1 = (1.0 - cosw) * a0inv;
+    m_b2 = (1.0 - cosw) / 2.0 * a0inv;
+    m_a1 = -2.0 * cosw * a0inv;
+    m_a2 = (1.0 - alpha) * a0inv;
+  }
+
+private:
+  float m_cutoffFrequency;
+  float m_resonance;
+  float m_x1, m_x2, m_y1, m_y2; // State variables
+  float m_b0, m_b1, m_b2, m_a1, m_a2; // Filter coefficients
+};
+
 class SawtoothSynth
 {
 public:
