@@ -27,12 +27,31 @@ public:
 
   float getNextSample() {
     float output = 2.0 * m_phase - 1.0; // Output a sawtooth wave between -1 and 1
+    output = applyAntiAliasing(output);
     m_phase += m_phaseIncrement;
     m_phase -= (int)m_phase;
     return output;
   }
 
 private:
+  float applyAntiAliasing(float sawtooth) {
+    float polyBLEP;
+
+    if (m_phase < m_phaseIncrement) {
+      float x = m_phase / m_phaseIncrement - 1.0;
+      polyBLEP = -(x*x);
+    }
+    else if (m_phase > 1.0 - m_phaseIncrement) {
+      float x = (m_phase - 1.0) / m_phaseIncrement + 1.0;
+      polyBLEP = x*x;
+    }
+    else {
+      polyBLEP = 0.0;
+    }
+
+    return sawtooth - polyBLEP;
+  }
+
   float m_frequency;
   float m_sampleRate;
   float m_phase;
