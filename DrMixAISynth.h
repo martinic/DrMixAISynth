@@ -46,7 +46,7 @@ public:
   }
 
   float process(float input) {
-    // Calculate output using Direct Form II structure
+    // Calculate output using Direct Form I structure
     float output = m_b0 * input + m_b1 * m_x1 + m_b2 * m_x2 - m_a1 * m_y1 - m_a2 * m_y2;
     
     // Update state variables
