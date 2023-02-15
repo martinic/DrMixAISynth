@@ -89,6 +89,8 @@ private:
   void calculateCoefficients() {
     // Calculate filter coefficients based on cutoff frequency and resonance
     float omega = 2.0 * M_PI * m_cutoffFrequency / m_sampleRate;
+    omega = omega < 0.0 ? 0.0 : omega;
+    omega = omega > 0.98 * M_PI ? 0.98 * M_PI : omega;
     float alpha = sin(omega) / (2.0 * m_resonance);
     float cosw = cos(omega);
     float a0inv = 1.0 / (1.0 + alpha);
