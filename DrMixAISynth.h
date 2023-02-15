@@ -109,23 +109,39 @@ private:
 class SawtoothSynth
 {
 public:
-  SawtoothSynth() : m_sawtooth(440, 44100) {}
+  SawtoothSynth(double sampleRate = 44100) :
+    m_sawtooth(440, sampleRate),
+    m_filter(1000, 1.0, sampleRate)
+  {}
 
-  void SetSampleRate(double rate) { m_sawtooth.setSampleRate(rate); }
+  void SetSampleRate(double rate)
+  {
+    m_sawtooth.setSampleRate(rate);
+    m_filter.setSampleRate(rate);
+  }
+
   void SetFrequency(double frequency) { m_sawtooth.setFrequency(frequency); }
 
-  void Reset() { m_sawtooth.reset(); }
-
-  void Process(double *output, int samples)
+  void Reset()
   {
+    m_sawtooth.reset();
+    m_filter.reset();
+  }
+
+  void Process(double *output, int samples, bool gate)
+  {
+    float sample;
     for (int i = 0; i < samples; i++)
     {
-      output[i] = m_sawtooth.getNextSample();
+      sample = m_sawtooth.getNextSample();
+      sample = gate ? sample : 0.0;
+      output[i] = m_filter.process(sample);
     }
   }
 
 private:
   SawtoothOscillator m_sawtooth;
+  LowPassFilter m_filter;
 };
 
 enum EParams
@@ -153,9 +169,9 @@ public:
 
   void ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples);
 
-  void Process(double *output, int samples)
+  void Process(double *output, int samples, bool gate)
   {
-    m_synth->Process(output, samples);
+    m_synth->Process(output, samples, gate);
   }
 
 private:

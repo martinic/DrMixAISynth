@@ -103,13 +103,9 @@ void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *c
       m_midi_queue.Remove();
     }
 
-    double *output = &outputs[0][offset];
     int block = next - offset;
-
-    if (m_note_on >= 0)
-      Process(output, block);
-    else
-      memset(output, 0, block * sizeof(double));
+    bool gate = m_note_on >= 0;
+    Process(&outputs[0][offset], block, gate);
 
     offset = next;
   }
