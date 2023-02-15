@@ -5,7 +5,7 @@
 
 DrMixAISynth::DrMixAISynth(void *instance):
   IPLUG_CTOR(kNumParams, 0, instance),
-  m_sine(new SineSynth()),
+  m_synth(new SawtoothSynth()),
   m_note_on(-1)
 {
   AddParam(kParamFrequency, new IDoubleParam("Freq", 440, 20, 20000, 0, "Hz"));
@@ -14,7 +14,7 @@ DrMixAISynth::DrMixAISynth(void *instance):
 void DrMixAISynth::SetSampleRate(double rate)
 {
   IPlug::SetSampleRate(rate);
-  m_sine->SetSampleRate(rate);
+  m_synth->SetSampleRate(rate);
 }
 
 void DrMixAISynth::SetBlockSize(int size)
@@ -38,7 +38,7 @@ void DrMixAISynth::OnParamChange(int index)
 
 void DrMixAISynth::Reset()
 {
-  m_sine->Reset();
+  m_synth->Reset();
 }
 
 void DrMixAISynth::ProcessMidiMsg(const IMidiMsg *msg)

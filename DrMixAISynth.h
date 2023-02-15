@@ -13,6 +13,18 @@ public:
     m_phaseIncrement = frequency / sampleRate;
   }
 
+  void reset() { m_phase = 0.0; }
+
+  void setFrequency(float frequency) {
+    m_frequency = frequency;
+    m_phaseIncrement = frequency / m_sampleRate;
+  }
+
+  void setSampleRate(float sampleRate) {
+    m_sampleRate = sampleRate;
+    m_phaseIncrement = m_frequency / sampleRate;
+  }
+
   float getNextSample() {
     float output = 2.0 * m_phase - 1.0; // Output a sawtooth wave between -1 and 1
     m_phase += m_phaseIncrement;
@@ -29,34 +41,26 @@ private:
   float m_phaseIncrement;
 };
 
-class SineSynth
+class SawtoothSynth
 {
 public:
-  SineSynth() : m_sample_rate(44100), m_frequency(0), m_phase(0) {}
+  SawtoothSynth() : m_sawtooth(440, 44100) {}
 
-  void SetSampleRate(double rate) { m_sample_rate = rate; }
-  double GetSampleRate() { return m_sample_rate; }
+  void SetSampleRate(double rate) { m_sawtooth.setSampleRate(rate); }
+  void SetFrequency(double frequency) { m_sawtooth.setFrequency(frequency); }
 
-  void SetFrequency(double frequency) { m_frequency = frequency; }
-
-  void Reset() { m_phase = 0; }
+  void Reset() { m_sawtooth.reset(); }
 
   void Process(double *output, int samples)
   {
-    double phase_step = m_frequency / GetSampleRate();
-
     for (int i = 0; i < samples; i++)
     {
-      output[i] = sin(2*M_PI * m_phase);
-      m_phase += phase_step;
-      m_phase -= (double)(int)m_phase;
+      output[i] = m_sawtooth.getNextSample();
     }
   }
 
 private:
-  double m_sample_rate;
-  double m_frequency;
-  double m_phase;
+  SawtoothOscillator m_sawtooth;
 };
 
 enum EParams
@@ -69,13 +73,13 @@ class DrMixAISynth : public IPlug
 {
 public:
   DrMixAISynth(void *instance);
-  ~DrMixAISynth() { delete m_sine; }
+  ~DrMixAISynth() { delete m_synth; }
 
   void SetSampleRate(double rate);
   void SetBlockSize(int size);
 
   void OnParamChange(int index);
-  void SetFrequency(double frequency) { m_sine->SetFrequency(frequency); }
+  void SetFrequency(double frequency) { m_synth->SetFrequency(frequency); }
 
   void Reset();
 
@@ -86,11 +90,11 @@ public:
 
   void Process(double *output, int samples)
   {
-    m_sine->Process(output, samples);
+    m_synth->Process(output, samples);
   }
 
 private:
-  SineSynth *m_sine;
+  SawtoothSynth *m_synth;
 
   IMidiQueue m_midi_queue;
   int m_note_on;
