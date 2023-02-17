@@ -223,6 +223,9 @@ public:
   void SetCutoffFrequency(double cutoff) { m_cutoffFrequency = cutoff; }
   void SetResonance(double resonance) { m_filter.setResonance(resonance); }
 
+  void SetLFOFrequency(double frequency) { m_lfo.setFrequency(frequency); }
+  void SetLFOAmplitude(double amplitude) { m_lfo.setAmplitude(amplitude); }
+
   void Reset()
   {
     m_sawtooth.reset();
@@ -309,6 +312,9 @@ enum EParams
   kParamCutoffFrequency,
   kParamResonance,
 
+  kParamLFOFrequency,
+  kParamLFOAmplitude,
+
   kNumParams
 };
 
@@ -333,6 +339,9 @@ public:
 
   void SetCutoffFrequency(double cutoff) { m_synth->SetCutoffFrequency(cutoff); }
   void SetResonance(double resonance) { m_synth->SetResonance(resonance); }
+
+  void SetLFOFrequency(double frequency) { m_synth->SetLFOFrequency(frequency); }
+  void SetLFOAmplitude(double amplitude) { m_synth->SetLFOAmplitude(amplitude); }
 
   void Reset();
 

@@ -16,6 +16,9 @@ DrMixAISynth::DrMixAISynth(void *instance):
 
   AddParam(kParamCutoffFrequency, new IDoubleExpParam(6, "Cutoff", 20000, 20, 20000, 0, "Hz"));
   AddParam(kParamResonance, new IDoubleParam("Resonance", 0.5, 0.5, 4.0, 1));
+
+  AddParam(kParamLFOFrequency, new IDoubleExpParam(3, "LFO Rate", 2, 0.1, 10, 2, "Hz"));
+  AddParam(kParamLFOAmplitude, new IDoubleParam("LFO Depth", 0, 0, 1000, 0, "Hz"));
 }
 
 void DrMixAISynth::SetSampleRate(double rate)
@@ -81,6 +84,20 @@ void DrMixAISynth::OnParamChange(int index)
     {
       double resonance = GetParam<IDoubleParam>(index)->Value();
       SetResonance(resonance);
+      break;
+    }
+
+    case kParamLFOFrequency:
+    {
+      double rate = GetParam<IDoubleExpParam>(index)->Value();
+      SetLFOFrequency(rate);
+      break;
+    }
+
+    case kParamLFOAmplitude:
+    {
+      double depth = GetParam<IDoubleParam>(index)->Value();
+      SetLFOAmplitude(depth);
       break;
     }
   }
