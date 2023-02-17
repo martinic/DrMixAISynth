@@ -148,6 +148,30 @@ private:
   float m_b0, m_b1, m_b2, m_a1, m_a2; // Filter coefficients
 };
 
+class SineLFO {
+public:
+  SineLFO(float frequency, float amplitude, float sampleRate) : m_frequency(frequency), m_amplitude(amplitude), m_sampleRate(sampleRate) {
+    m_phase = 0.0;
+    m_phaseIncrement = frequency / sampleRate;
+  }
+
+  float getNextSample() {
+    float output = m_amplitude * sin(2.0 * M_PI * m_phase);
+    m_phase += m_phaseIncrement;
+    if (m_phase >= 1.0) {
+      m_phase -= 1.0;
+    }
+    return output;
+  }
+
+private:
+  float m_frequency;
+  float m_amplitude;
+  float m_sampleRate;
+  float m_phase;
+  float m_phaseIncrement;
+};
+
 class SawtoothSynth
 {
 public:
