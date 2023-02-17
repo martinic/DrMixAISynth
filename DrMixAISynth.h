@@ -171,6 +171,12 @@ public:
   }
 
   void SetFrequency(double frequency) { m_sawtooth.setFrequency(frequency); }
+
+  void SetAttackTime(double attack) { m_attackTime = attack; }
+  void SetDecayTime(double decay) { m_decayTime = decay; }
+  void SetSustainLevel(double sustain) { m_sustainLevel = sustain; }
+  void SetReleaseTime(double release) { m_releaseTime = release; }
+
   void SetCutoffFrequency(double cutoff) { m_filter.setCutoffFrequency(cutoff); }
   void SetResonance(double resonance) { m_filter.setResonance(resonance); }
 
@@ -239,7 +245,12 @@ private:
 
 enum EParams
 {
-  kParamCutoffFrequency = 0,
+  kParamAttackTime = 0,
+  kParamDecayTime,
+  kParamSustainLevel,
+  kParamReleaseTime,
+
+  kParamCutoffFrequency,
   kParamResonance,
 
   kNumParams
@@ -257,6 +268,12 @@ public:
   void OnParamChange(int index);
 
   void SetFrequency(double frequency) { m_synth->SetFrequency(frequency); }
+
+  void SetAttackTime(double attack) { m_synth->SetAttackTime(attack); }
+  void SetDecayTime(double decay) { m_synth->SetDecayTime(decay); }
+  void SetSustainLevel(double sustain) { m_synth->SetSustainLevel(sustain); }
+  void SetReleaseTime(double release) { m_synth->SetReleaseTime(release); }
+
   void SetCutoffFrequency(double cutoff) { m_synth->SetCutoffFrequency(cutoff); }
   void SetResonance(double resonance) { m_synth->SetResonance(resonance); }
 

@@ -8,6 +8,11 @@ DrMixAISynth::DrMixAISynth(void *instance):
   m_synth(new SawtoothSynth()),
   m_note_on(-1)
 {
+  AddParam(kParamAttackTime, new IDoubleExpParam(3, "Attack", 100, 1, 5000, 0, "ms"));
+  AddParam(kParamDecayTime, new IDoubleExpParam(3, "Decay", 200, 1, 5000, 0, "ms"));
+  AddParam(kParamSustainLevel, new IDoubleParam("Sustain", -6.0, -72.0, 0.0, 1, "dB"));
+  AddParam(kParamReleaseTime, new IDoubleExpParam(3, "Release", 300, 1, 5000, 0, "ms"));
+
   AddParam(kParamCutoffFrequency, new IDoubleExpParam(6, "Cutoff", 20000, 20, 20000, 0, "Hz"));
   AddParam(kParamResonance, new IDoubleParam("Resonance", 0.5, 0.5, 4.0, 1));
 }
@@ -28,6 +33,34 @@ void DrMixAISynth::OnParamChange(int index)
 {
   switch (index)
   {
+    case kParamAttackTime:
+    {
+      double attack = GetParam<IDoubleExpParam>(index)->Value() * 0.001;
+      SetAttackTime(attack);
+      break;
+    }
+
+    case kParamDecayTime:
+    {
+      double decay = GetParam<IDoubleExpParam>(index)->Value() * 0.001;
+      SetDecayTime(decay);
+      break;
+    }
+
+    case kParamSustainLevel:
+    {
+      double sustain = GetParam<IDoubleParam>(index)->DBToAmp();
+      SetSustainLevel(sustain);
+      break;
+    }
+
+    case kParamReleaseTime:
+    {
+      double release = GetParam<IDoubleExpParam>(index)->Value() * 0.001;
+      SetReleaseTime(release);
+      break;
+    }
+
     case kParamCutoffFrequency:
     {
       double cutoff = GetParam<IDoubleExpParam>(index)->Value();
