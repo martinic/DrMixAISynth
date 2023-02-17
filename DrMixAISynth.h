@@ -153,8 +153,16 @@ class SawtoothSynth
 public:
   SawtoothSynth(double sampleRate = 44100) :
     m_sawtooth(440, sampleRate),
-    m_filter(1000, 1.0, sampleRate)
-  {}
+    m_filter(1000, 1.0, sampleRate),
+
+    m_sampleRate(sampleRate),
+    m_noteOnTime(0.0)
+  {
+    m_attackTime = 0.1;
+    m_decayTime = 0.2;
+    m_sustainLevel = 0.5;
+    m_releaseTime = 0.3;
+  }
 
   void SetSampleRate(double rate)
   {
@@ -170,22 +178,61 @@ public:
   {
     m_sawtooth.reset();
     m_filter.reset();
+
+    m_noteOnTime = 0.0;
   }
 
   void Process(double *output, int samples, bool gate)
   {
+    // The synthesizer's rendering loop
     float sample;
     for (int i = 0; i < samples; i++)
     {
-      sample = m_sawtooth.getNextSample();
+      // Calculate the envelope value for each sample
+      float time = i / m_sampleRate;
+      float envelope = adsrEnvelope(time, m_noteOnTime);
+      sample = m_sawtooth.getNextSample() * envelope;
+
       sample = gate ? sample : 0.0;
       output[i] = m_filter.process(sample);
     }
+
+    m_noteOnTime -= samples / m_sampleRate;
   }
 
 private:
+  // A function to calculate the envelope value at a given time
+  float adsrEnvelope(float time, float noteOnTime)
+  {
+    float deltaTime = time - m_noteOnTime;
+    if (deltaTime < m_attackTime)
+    {
+      // Attack phase
+      return deltaTime / m_attackTime;
+    }
+    else if (deltaTime < m_attackTime + m_decayTime)
+    {
+      // Decay phase
+      return 1.0 - (1.0 - m_sustainLevel) * (deltaTime - m_attackTime) / m_decayTime;
+    }
+    else
+    {
+      // Sustain or Release phase
+      return m_sustainLevel * exp(-(deltaTime - m_attackTime - m_decayTime) / m_releaseTime);
+    }
+  }
+
   SawtoothOscillator m_sawtooth;
   LowPassFilter m_filter;
+
+  float m_sampleRate;
+  float m_noteOnTime;
+
+  // ADSR parameters
+  float m_attackTime; // Time for the amplitude to reach its peak
+  float m_decayTime; // Time for the amplitude to decay from peak to sustain level
+  float m_sustainLevel; // Level at which the amplitude sustains
+  float m_releaseTime; // Time for the amplitude to decay from sustain level to zero
 };
 
 enum EParams
