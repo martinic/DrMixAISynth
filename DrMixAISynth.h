@@ -155,12 +155,19 @@ public:
     m_phaseIncrement = frequency / sampleRate;
   }
 
+  void reset() { m_phase = 0.0; }
+
+  void setFrequency(float frequency) {
+    m_frequency = frequency;
+    m_phaseIncrement = frequency / m_sampleRate;
+  }
+
+  void setAmplitude(float amplitude) { m_amplitude = amplitude; }
+
   float getNextSample() {
     float output = m_amplitude * sin(2.0 * M_PI * m_phase);
     m_phase += m_phaseIncrement;
-    if (m_phase >= 1.0) {
-      m_phase -= 1.0;
-    }
+    m_phase -= (int)m_phase;
     return output;
   }
 
@@ -220,6 +227,7 @@ public:
   {
     m_sawtooth.reset();
     m_filter.reset();
+    m_lfo.reset();
 
     m_noteOnTime = 0.0;
   }
