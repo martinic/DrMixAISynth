@@ -8,6 +8,7 @@ DrMixAISynth::DrMixAISynth(void *instance):
   m_synth(new SawtoothSynth()),
   m_note_on(-1)
 {
+  AddParam(kParamEnvelope, new IBoolParam("Envelope", false));
   AddParam(kParamAttackTime, new IDoubleExpParam(3, "Attack", 100, 1, 5000, 0, "ms"));
   AddParam(kParamDecayTime, new IDoubleExpParam(3, "Decay", 200, 1, 5000, 0, "ms"));
   AddParam(kParamSustainLevel, new IDoubleParam("Sustain", -6.0, -72.0, 0.0, 1, "dB"));
@@ -33,6 +34,14 @@ void DrMixAISynth::OnParamChange(int index)
 {
   switch (index)
   {
+    case kParamEnvelope:
+    {
+      bool enable = GetParam<IBoolParam>(index)->Bool();
+      bool gate = m_note_on >= 0;
+      BypassEnvelope(!enable, gate);
+      break;
+    }
+
     case kParamAttackTime:
     {
       double attack = GetParam<IDoubleExpParam>(index)->Value() * 0.001;
