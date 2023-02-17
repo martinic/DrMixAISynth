@@ -177,7 +177,10 @@ class SawtoothSynth
 public:
   SawtoothSynth(double sampleRate = 44100) :
     m_sawtooth(440, sampleRate),
-    m_filter(1000, 1.0, sampleRate),
+
+    m_cutoffFrequency(1000),
+    m_filter(m_cutoffFrequency, 1.0, sampleRate), // A low-pass filter with initial cutoff frequency and resonance
+    m_lfo(2, 500, sampleRate), // An LFO with frequency 2 Hz, amplitude 500 Hz, and the same sample rate as the audio processing loop
 
     m_envelopeBypass(true),
     m_sampleRate(sampleRate),
@@ -210,7 +213,7 @@ public:
   void SetSustainLevel(double sustain) { m_sustainLevel = sustain; }
   void SetReleaseTime(double release) { m_releaseTime = release; }
 
-  void SetCutoffFrequency(double cutoff) { m_filter.setCutoffFrequency(cutoff); }
+  void SetCutoffFrequency(double cutoff) { m_cutoffFrequency = cutoff; }
   void SetResonance(double resonance) { m_filter.setResonance(resonance); }
 
   void Reset()
@@ -237,7 +240,10 @@ public:
       sample *= 0.25; // -12 dB
       sample = gate ? sample : 0.0;
 
-      output[i] = m_filter.process(sample);
+      float lfoOutput = m_lfo.getNextSample(); // Get the next sample of the LFO
+      m_filter.setCutoffFrequency(m_cutoffFrequency + lfoOutput); // Set the filter cutoff frequency to the initial value plus the LFO output
+      float input = sample; // Get the next sample from your sound source
+      output[i] = m_filter.process(input); // Filter the input using the modified cutoff frequency
     }
 
     m_noteOnTime -= samples / m_sampleRate;
@@ -268,7 +274,10 @@ private:
   }
 
   SawtoothOscillator m_sawtooth;
+
+  float m_cutoffFrequency;
   LowPassFilter m_filter;
+  SineLFO m_lfo;
 
   bool m_envelopeBypass;
   float m_sampleRate;
