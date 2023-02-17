@@ -182,6 +182,8 @@ public:
     m_noteOnTime = 0.0;
   }
 
+  void Attack() { m_noteOnTime = 0.0; }
+
   void Process(double *output, int samples, bool gate)
   {
     // The synthesizer's rendering loop

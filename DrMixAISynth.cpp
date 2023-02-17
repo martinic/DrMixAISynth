@@ -67,6 +67,7 @@ void DrMixAISynth::ProcessMidiQueue(const IMidiMsg *msg)
       SetFrequency(freq);
 
       m_note_on = note;
+      m_synth->Attack();
       break;
     }
 
