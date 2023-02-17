@@ -210,7 +210,9 @@ public:
       float envelope = adsrEnvelope(time, m_noteOnTime);
       sample = m_sawtooth.getNextSample() * envelope;
 
+      sample *= 0.25; // -12 dB
       sample = gate ? sample : 0.0;
+
       output[i] = m_filter.process(sample);
     }
 
