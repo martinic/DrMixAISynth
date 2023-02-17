@@ -124,6 +124,8 @@ void DrMixAISynth::ProcessMidiQueue(const IMidiMsg *msg)
 
 void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples)
 {
+  bool envelopIsEnabled = !m_synth->EnvelopeIsBypassed();
+
   for (int offset = 0; offset < samples;)
   {
     int next;
@@ -146,7 +148,7 @@ void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *c
     }
 
     int block = next - offset;
-    bool gate = m_note_on >= 0;
+    bool gate = m_note_on >= 0 || envelopIsEnabled;
     Process(&outputs[0][offset], block, gate);
 
     offset = next;

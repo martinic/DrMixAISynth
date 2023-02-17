@@ -155,6 +155,7 @@ public:
     m_sawtooth(440, sampleRate),
     m_filter(1000, 1.0, sampleRate),
 
+    m_envelopeBypass(true),
     m_sampleRate(sampleRate),
     m_noteOnTime(0.0)
   {
@@ -171,6 +172,14 @@ public:
   }
 
   void SetFrequency(double frequency) { m_sawtooth.setFrequency(frequency); }
+
+  void BypassEnvelope(bool bypass, bool gate)
+  {
+    if (!bypass && m_envelopeBypass && gate) Attack();
+    m_envelopeBypass = bypass;
+  }
+
+  bool EnvelopeIsBypassed() { return m_envelopeBypass; }
 
   void SetAttackTime(double attack) { m_attackTime = attack; }
   void SetDecayTime(double decay) { m_decayTime = decay; }
@@ -212,6 +221,8 @@ private:
   // A function to calculate the envelope value at a given time
   float adsrEnvelope(float time, float noteOnTime)
   {
+    if (m_envelopeBypass) return 1.0;
+
     float deltaTime = time - m_noteOnTime;
     if (deltaTime < m_attackTime)
     {
@@ -233,6 +244,7 @@ private:
   SawtoothOscillator m_sawtooth;
   LowPassFilter m_filter;
 
+  bool m_envelopeBypass;
   float m_sampleRate;
   float m_noteOnTime;
 
@@ -245,7 +257,8 @@ private:
 
 enum EParams
 {
-  kParamAttackTime = 0,
+  kParamEnvelope = 0,
+  kParamAttackTime,
   kParamDecayTime,
   kParamSustainLevel,
   kParamReleaseTime,
@@ -269,6 +282,7 @@ public:
 
   void SetFrequency(double frequency) { m_synth->SetFrequency(frequency); }
 
+  void BypassEnvelope(bool bypass, bool gate) { m_synth->BypassEnvelope(bypass, gate); }
   void SetAttackTime(double attack) { m_synth->SetAttackTime(attack); }
   void SetDecayTime(double decay) { m_synth->SetDecayTime(decay); }
   void SetSustainLevel(double sustain) { m_synth->SetSustainLevel(sustain); }
