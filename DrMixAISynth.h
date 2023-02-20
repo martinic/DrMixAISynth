@@ -9,11 +9,11 @@
 class SawtoothOscillator {
 public:
   SawtoothOscillator(float frequency, float sampleRate) : m_frequency(frequency), m_sampleRate(sampleRate) {
-    m_phase = 0.0;
+    m_phase = 0.5;
     m_phaseIncrement = frequency / sampleRate;
   }
 
-  void reset() { m_phase = 0.0; }
+  void reset() { m_phase = 0.5; }
 
   void setFrequency(float frequency) {
     m_frequency = frequency;
@@ -229,6 +229,8 @@ public:
   void Reset()
   {
     m_sawtooth.reset();
+    m_sawtooth.setFrequency(0);
+
     m_filter.reset();
     m_lfo.reset();
 
