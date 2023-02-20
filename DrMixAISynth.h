@@ -355,6 +355,8 @@ public:
     m_synth->Process(output, samples, gate);
   }
 
+  bool OnGUIRescale(int wantScale);
+
 private:
   SawtoothSynth *m_synth;
 

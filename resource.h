@@ -80,3 +80,26 @@
 
 // To-do: Set AudioComponents type in AU-Info.plist to aufx (audio effect),
 // aumu (instrument), or aumf (audio effect with MIDI input).
+
+// Unique IDs for each image resource, bit 0 is scale (0 = full, 1 = half).
+
+#define BACKGROUND_2X_PNG_ID 100
+#define SWITCH_2X_PNG_ID     102
+#define KNOB_2X_PNG_ID       104
+
+#define BACKGROUND_PNG_ID    101
+#define SWITCH_PNG_ID        103
+#define KNOB_PNG_ID          105
+
+// Image resource filenames (case-sensitive!).
+
+#define BACKGROUND_2X_PNG_FN "img/Background@2x.png"
+#define SWITCH_2X_PNG_FN     "img/Switch@2x.png"
+#define KNOB_2X_PNG_FN       "img/Knob@2x.png"
+
+#define BACKGROUND_PNG_FN    "img/Background.png"
+#define SWITCH_PNG_FN        "img/Switch.png"
+#define KNOB_PNG_FN          "img/Knob.png"
+
+// To-do: Set AudioComponents type in AU-Info.plist to aufx (audio effect),
+// aumu (instrument), or aumf (audio effect with MIDI input).

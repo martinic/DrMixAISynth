@@ -1,6 +1,16 @@
 #include "resource.h"
 #include <windows.h>
 
+// Image resources.
+
+BACKGROUND_PNG_ID    PNG BACKGROUND_PNG_FN
+SWITCH_PNG_ID        PNG SWITCH_PNG_FN
+KNOB_PNG_ID          PNG KNOB_PNG_FN
+
+BACKGROUND_2X_PNG_ID PNG BACKGROUND_2X_PNG_FN
+SWITCH_2X_PNG_ID     PNG SWITCH_2X_PNG_FN
+KNOB_2X_PNG_ID       PNG KNOB_2X_PNG_FN
+
 // Version info.
 
 #ifdef VERSIONINFO_VERSION

@@ -99,6 +99,24 @@
 		3D144CC428C4FAB3003FA6F7 /* IPlugCLAP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D144C4F28C4F8C8003FA6F7 /* IPlugCLAP.cpp */; };
 		3D144CC528C4FAB6003FA6F7 /* IPlugCLAP.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D144C5028C4F8C8003FA6F7 /* IPlugCLAP.h */; };
 		3D144CC628C4FAD4003FA6F7 /* clap.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D144C5228C4F925003FA6F7 /* clap.h */; };
+		3D25412F29A398D200CB37ED /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412929A3984800CB37ED /* Background.png */; };
+		3D25413029A398D200CB37ED /* Switch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412829A3984800CB37ED /* Switch.png */; };
+		3D25413129A398D200CB37ED /* Knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412A29A3984800CB37ED /* Knob.png */; };
+		3D25413229A398D200CB37ED /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412B29A3985500CB37ED /* Background@2x.png */; };
+		3D25413329A398D200CB37ED /* Switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412D29A3985500CB37ED /* Switch@2x.png */; };
+		3D25413429A398D200CB37ED /* Knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412C29A3985500CB37ED /* Knob@2x.png */; };
+		3D25413629A398E600CB37ED /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412929A3984800CB37ED /* Background.png */; };
+		3D25413729A398E600CB37ED /* Switch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412829A3984800CB37ED /* Switch.png */; };
+		3D25413829A398E600CB37ED /* Knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412A29A3984800CB37ED /* Knob.png */; };
+		3D25413929A398E600CB37ED /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412B29A3985500CB37ED /* Background@2x.png */; };
+		3D25413A29A398E600CB37ED /* Switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412D29A3985500CB37ED /* Switch@2x.png */; };
+		3D25413B29A398E600CB37ED /* Knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412C29A3985500CB37ED /* Knob@2x.png */; };
+		3D25413D29A398F800CB37ED /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412929A3984800CB37ED /* Background.png */; };
+		3D25413E29A398F800CB37ED /* Switch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412829A3984800CB37ED /* Switch.png */; };
+		3D25413F29A398F800CB37ED /* Knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412A29A3984800CB37ED /* Knob.png */; };
+		3D25414029A398F800CB37ED /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412B29A3985500CB37ED /* Background@2x.png */; };
+		3D25414129A398F800CB37ED /* Switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412D29A3985500CB37ED /* Switch@2x.png */; };
+		3D25414229A398F800CB37ED /* Knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412C29A3985500CB37ED /* Knob@2x.png */; };
 		3D27758225162D6300F354B7 /* IMidiQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27758125162D6300F354B7 /* IMidiQueue.h */; };
 		3D27758325162D6300F354B7 /* IMidiQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27758125162D6300F354B7 /* IMidiQueue.h */; };
 		3D27758525162F8400F354B7 /* denormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27758425162F8300F354B7 /* denormal.h */; };
@@ -296,7 +314,13 @@
 		3D144C5028C4F8C8003FA6F7 /* IPlugCLAP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IPlugCLAP.h; path = IPlug/IPlugCLAP.h; sourceTree = "<group>"; };
 		3D144C5228C4F925003FA6F7 /* clap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = clap.h; path = clap/clap.h; sourceTree = "<group>"; };
 		3D144CC228C4F93B003FA6F7 /* Doctor Mix AI Synth.clap */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Doctor Mix AI Synth.clap"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D144CC328C4F93B003FA6F7 /* CLAP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CLAP-Info.plist"; path = "CLAP-Info.plist"; sourceTree = "<group>"; };
+		3D144CC328C4F93B003FA6F7 /* CLAP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CLAP-Info.plist"; sourceTree = "<group>"; };
+		3D25412829A3984800CB37ED /* Switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Switch.png; path = img/Switch.png; sourceTree = "<group>"; };
+		3D25412929A3984800CB37ED /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = img/Background.png; sourceTree = "<group>"; };
+		3D25412A29A3984800CB37ED /* Knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Knob.png; path = img/Knob.png; sourceTree = "<group>"; };
+		3D25412B29A3985500CB37ED /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background@2x.png"; path = "img/Background@2x.png"; sourceTree = "<group>"; };
+		3D25412C29A3985500CB37ED /* Knob@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Knob@2x.png"; path = "img/Knob@2x.png"; sourceTree = "<group>"; };
+		3D25412D29A3985500CB37ED /* Switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch@2x.png"; path = "img/Switch@2x.png"; sourceTree = "<group>"; };
 		3D27758125162D6300F354B7 /* IMidiQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMidiQueue.h; path = IPlug/IMidiQueue.h; sourceTree = "<group>"; };
 		3D27758425162F8300F354B7 /* denormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = denormal.h; path = WDL/denormal.h; sourceTree = "<group>"; };
 		3D31A5D1246D7760000BAC95 /* ptrlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ptrlist.h; path = WDL/ptrlist.h; sourceTree = "<group>"; };
@@ -442,6 +466,27 @@
 				3D144C5228C4F925003FA6F7 /* clap.h */,
 			);
 			name = clap;
+			sourceTree = "<group>";
+		};
+		3D25412629A397FE00CB37ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D25412729A3981000CB37ED /* img */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3D25412729A3981000CB37ED /* img */ = {
+			isa = PBXGroup;
+			children = (
+				3D25412929A3984800CB37ED /* Background.png */,
+				3D25412829A3984800CB37ED /* Switch.png */,
+				3D25412A29A3984800CB37ED /* Knob.png */,
+				3D25412B29A3985500CB37ED /* Background@2x.png */,
+				3D25412D29A3985500CB37ED /* Switch@2x.png */,
+				3D25412C29A3985500CB37ED /* Knob@2x.png */,
+			);
+			name = img;
 			sourceTree = "<group>";
 		};
 		3D529C12245847D400527485 /* Frameworks */ = {
@@ -626,6 +671,7 @@
 				3D529CA72458517C00527485 /* WDL */,
 				3D144C5128C4F905003FA6F7 /* clap */,
 				3DC066E924599DCC00516437 /* VST2_SDK */,
+				3D25412629A397FE00CB37ED /* Resources */,
 				3D529C12245847D400527485 /* Frameworks */,
 				3DCA573124583673009F1E70 /* Products */,
 			);
@@ -844,6 +890,7 @@
 				3D144C7A28C4F93B003FA6F7 /* Headers */,
 				3D144C5428C4F93B003FA6F7 /* Sources */,
 				3D144C7728C4F93B003FA6F7 /* Frameworks */,
+				3D25413529A398DB00CB37ED /* Resources */,
 			);
 			buildRules = (
 			);
@@ -861,6 +908,7 @@
 				3D738531246E94E500582D74 /* Headers */,
 				3D43DA0C246E8C8D004AFF08 /* Sources */,
 				3D43DA0D246E8C8D004AFF08 /* Frameworks */,
+				3D25412E29A398B100CB37ED /* Resources */,
 				3D738598246E968C00582D74 /* Rez */,
 			);
 			buildRules = (
@@ -879,6 +927,7 @@
 				3DCA572E24583673009F1E70 /* Headers */,
 				3DCA572C24583673009F1E70 /* Sources */,
 				3DCA572D24583673009F1E70 /* Frameworks */,
+				3D25413C29A398EF00CB37ED /* Resources */,
 			);
 			buildRules = (
 			);
@@ -917,6 +966,48 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D25412E29A398B100CB37ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D25412F29A398D200CB37ED /* Background.png in Resources */,
+				3D25413029A398D200CB37ED /* Switch.png in Resources */,
+				3D25413129A398D200CB37ED /* Knob.png in Resources */,
+				3D25413229A398D200CB37ED /* Background@2x.png in Resources */,
+				3D25413329A398D200CB37ED /* Switch@2x.png in Resources */,
+				3D25413429A398D200CB37ED /* Knob@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D25413529A398DB00CB37ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D25413629A398E600CB37ED /* Background.png in Resources */,
+				3D25413729A398E600CB37ED /* Switch.png in Resources */,
+				3D25413829A398E600CB37ED /* Knob.png in Resources */,
+				3D25413929A398E600CB37ED /* Background@2x.png in Resources */,
+				3D25413A29A398E600CB37ED /* Switch@2x.png in Resources */,
+				3D25413B29A398E600CB37ED /* Knob@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D25413C29A398EF00CB37ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D25413D29A398F800CB37ED /* Background.png in Resources */,
+				3D25413E29A398F800CB37ED /* Switch.png in Resources */,
+				3D25413F29A398F800CB37ED /* Knob.png in Resources */,
+				3D25414029A398F800CB37ED /* Background@2x.png in Resources */,
+				3D25414129A398F800CB37ED /* Switch@2x.png in Resources */,
+				3D25414229A398F800CB37ED /* Knob@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXRezBuildPhase section */
 		3D738598246E968C00582D74 /* Rez */ = {
@@ -1062,7 +1153,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"IGRAPHICS_COCOA=$(PROJECT_NAME:identifier)_CLAP",
+					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_CLAP",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CLAP-Info.plist";
@@ -1076,7 +1167,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"IGRAPHICS_COCOA=$(PROJECT_NAME:identifier)_CLAP",
+					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_CLAP",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CLAP-Info.plist";
@@ -1091,7 +1182,7 @@
 			buildSettings = {
 				EXPORTED_SYMBOLS_FILE = "$(SRCROOT)/$(PROJECT).exp";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"IGRAPHICS_COCOA=$(PROJECT_NAME:identifier)_AU",
+					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_AU",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1111,7 +1202,7 @@
 			buildSettings = {
 				EXPORTED_SYMBOLS_FILE = "$(SRCROOT)/$(PROJECT).exp";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"IGRAPHICS_COCOA=$(PROJECT_NAME:identifier)_AU",
+					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_AU",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1211,7 +1302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"IGRAPHICS_COCOA=$(PROJECT_NAME:identifier)_VST",
+					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_VST",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VST2-Info.plist";
@@ -1225,7 +1316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"IGRAPHICS_COCOA=$(PROJECT_NAME:identifier)_VST",
+					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_VST",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VST2-Info.plist";

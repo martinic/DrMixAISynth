@@ -4,10 +4,12 @@
 #include <string.h>
 
 DrMixAISynth::DrMixAISynth(void *instance):
-  IPLUG_CTOR(kNumParams, 0, instance),
+  IPLUG_CTOR(kNumParams, 1, instance),
   m_synth(new SawtoothSynth()),
   m_note_on(-1)
 {
+  // Plugin parameters
+
   AddParam(kParamEnvelope, new IBoolParam("Envelope", false));
   AddParam(kParamAttackTime, new IDoubleExpParam(3, "Attack", 100, 1, 5000, 0, "ms"));
   AddParam(kParamDecayTime, new IDoubleExpParam(3, "Decay", 200, 1, 5000, 0, "ms"));
@@ -19,6 +21,65 @@ DrMixAISynth::DrMixAISynth(void *instance):
 
   AddParam(kParamLFOFrequency, new IDoubleExpParam(3, "LFO Rate", 2, 0.1, 10, 2, "Hz"));
   AddParam(kParamLFOAmplitude, new IDoubleParam("LFO Depth", 0, 0, 1000, 0, "Hz"));
+
+  MakeDefaultPreset("Default");
+
+  // GUI
+
+  IGraphics *pGraphics = MakeGraphics(this, 1200, 680);
+
+  pGraphics->SetDefaultScale(IGraphics::kScaleHalf);
+  pGraphics->EnableTooltips(true);
+  pGraphics->HandleMouseWheel(IGraphics::kMouseWheelModKey);
+
+  IBitmap background(BACKGROUND_PNG_ID, pGraphics->Width(), pGraphics->Height());
+  pGraphics->AttachBackground(new IBackgroundControl(this, &background));
+
+  // Envelope switch/knobs
+
+  IBitmap switchBitmap(SWITCH_PNG_ID, 90, 32);
+  IControl *pSwitchControl = new ISwitchControl(this, 62, 72, kParamEnvelope, &switchBitmap);
+  pSwitchControl->SetTooltip("Envelope On/Off");
+  pGraphics->AttachControl(pSwitchControl);
+
+  IBitmap knobBitmap(KNOB_PNG_ID, 88, 88, 129);
+  IControl *pKnobControl;
+
+  pKnobControl = new IKnobMultiControl(this, 62, 150, kParamAttackTime, &knobBitmap);
+  pKnobControl->SetTooltip("Attack Time");
+  pGraphics->AttachControl(pKnobControl);
+
+  pKnobControl = new IKnobMultiControl(this, 62, 280, kParamDecayTime, &knobBitmap);
+  pKnobControl->SetTooltip("Decay Time");
+  pGraphics->AttachControl(pKnobControl);
+
+  pKnobControl = new IKnobMultiControl(this, 62, 410, kParamSustainLevel, &knobBitmap);
+  pKnobControl->SetTooltip("Sustain Level");
+  pGraphics->AttachControl(pKnobControl);
+
+  pKnobControl = new IKnobMultiControl(this, 62, 540, kParamReleaseTime, &knobBitmap);
+  pKnobControl->SetTooltip("Release Time");
+  pGraphics->AttachControl(pKnobControl);
+
+  // Filter knobs
+
+  pKnobControl = new IKnobMultiControl(this, 214, 108, kParamCutoffFrequency, &knobBitmap);
+  pKnobControl->SetTooltip("Cutoff Frequency");
+  pGraphics->AttachControl(pKnobControl);
+
+  pKnobControl = new IKnobMultiControl(this, 214, 238, kParamResonance, &knobBitmap);
+  pKnobControl->SetTooltip("Resonance");
+  pGraphics->AttachControl(pKnobControl);
+
+  pKnobControl = new IKnobMultiControl(this, 214, 368, kParamLFOFrequency, &knobBitmap);
+  pKnobControl->SetTooltip("LFO Rate");
+  pGraphics->AttachControl(pKnobControl);
+
+  pKnobControl = new IKnobMultiControl(this, 214, 498, kParamLFOAmplitude, &knobBitmap);
+  pKnobControl->SetTooltip("LFO Depth");
+  pGraphics->AttachControl(pKnobControl);
+
+  AttachGraphics(pGraphics);
 }
 
 void DrMixAISynth::SetSampleRate(double rate)
@@ -183,4 +244,38 @@ void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *c
   memcpy(outputs[1], outputs[0], samples * sizeof(double));
 
   m_midi_queue.Flush(samples);
+}
+
+bool DrMixAISynth::OnGUIRescale(int wantScale)
+{
+	// Load image set depending on host GUI DPI.
+	IGraphics* pGraphics = GetGUI();
+	pGraphics->Rescale(wantScale);
+
+	typedef IGraphics::BitmapResource Resource;
+
+	// Half scale image set.
+	static const Resource halfScaleImageSet[] =
+	{
+		Resource(IPLUG_RESOURCE(BACKGROUND_PNG)),
+		Resource(IPLUG_RESOURCE(SWITCH_PNG)),
+		Resource(IPLUG_RESOURCE(KNOB_PNG)),
+		Resource()
+	};
+
+	// Full scale image set.
+	static const Resource fullScaleImageSet[] =
+	{
+		Resource(IPLUG_RESOURCE(BACKGROUND_2X_PNG)),
+		Resource(IPLUG_RESOURCE(SWITCH_2X_PNG)),
+		Resource(IPLUG_RESOURCE(KNOB_2X_PNG)),
+		Resource()
+	};
+
+	const Resource* pResources = halfScaleImageSet;
+	if (wantScale == IGraphics::kScaleFull) pResources = fullScaleImageSet;
+
+	pGraphics->LoadBitmapResources(pResources);
+
+	return true;
 }

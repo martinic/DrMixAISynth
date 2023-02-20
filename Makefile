@@ -70,10 +70,19 @@ all : clap
 "$(OUTDIR)/$(PROJECT)_VST2.obj" : "$(PROJECT).cpp" "$(PROJECT).h" resource.h IPlug/Containers.h IPlug/Hosts.h IPlug/IControl.h IPlug/IGraphics.h IPlug/IGraphicsWin.h IPlug/IParam.h IPlug/IPlug_include_in_plug_hdr.h IPlug/IPlug_include_in_plug_src.h IPlug/IPlugBase.h IPlug/IPlugStructs.h IPlug/IPlugVST2.h
 	$(CPP) $(CPPFLAGS) /D VST2_API /wd4244 /Fo$@ /Fa"$(OUTDIR)/_$(PROJECT)_VST2.asm" "$(PROJECT).cpp"
 
-"$(OUTDIR)/$(PROJECT)_CLAP.res" : "$(PROJECT).rc" resource.h
+RESOURCES = \
+img/Background.png \
+img/Switch.png \
+img/Knob.png \
+\
+img/Background@2x.png \
+img/Switch@2x.png \
+img/Knob@2x.png
+
+"$(OUTDIR)/$(PROJECT)_CLAP.res" : "$(PROJECT).rc" resource.h $(RESOURCES)
 	$(RC) $(RCFLAGS) /D CLAP_API /fo$@ "$(PROJECT).rc"
 
-"$(OUTDIR)/$(PROJECT)_VST2.res" : "$(PROJECT).rc" resource.h
+"$(OUTDIR)/$(PROJECT)_VST2.res" : "$(PROJECT).rc" resource.h $(RESOURCES)
 	$(RC) $(RCFLAGS) /D VST2_API /fo$@ "$(PROJECT).rc"
 
 IPLUG = \
