@@ -35,9 +35,9 @@
 #endif
 
 // Interpreted as 0xMajrMnBg.
-#define PLUG_VER  0x00000002 // 0.0.2
-#define VERSIONINFO_VERSION     0,0,2,0
-#define VERSIONINFO_STR        "0.0.2 alpha"
+#define PLUG_VER  0x00010000 // 1.0.0
+#define VERSIONINFO_VERSION     1,0,0,0
+#define VERSIONINFO_STR        "1.0.0 RC1"
 
 #define VERSIONINFO_PRERELEASE // Define if alpha, beta, or RC
 #define VERSIONINFO_COPYRIGHT "2023 Martinic"
