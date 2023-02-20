@@ -10,6 +10,10 @@ DrMixAISynth::DrMixAISynth(void *instance):
 {
   // Plugin parameters
 
+  IBoolParam *pBypassParam = new IBoolParam("Bypass", false);
+  pBypassParam->SetGlobal(true);
+  AddParam(kParamBypass, pBypassParam);
+
   AddParam(kParamEnvelope, new IBoolParam("Envelope", false));
   AddParam(kParamAttackTime, new IDoubleExpParam(3, "Attack", 100, 1, 5000, 0, "ms"));
   AddParam(kParamDecayTime, new IDoubleExpParam(3, "Decay", 200, 1, 5000, 0, "ms"));
@@ -211,6 +215,7 @@ void DrMixAISynth::ProcessMidiQueue(const IMidiMsg *msg)
 
 void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples)
 {
+  bool pluginIsBypassed = IsBypassed() || GetParam<IBoolParam>(kParamBypass)->Bool();
   bool envelopIsEnabled = !m_synth->EnvelopeIsBypassed();
 
   for (int offset = 0; offset < samples;)
@@ -235,7 +240,7 @@ void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *c
     }
 
     int block = next - offset;
-    bool gate = m_note_on >= 0 || envelopIsEnabled;
+    bool gate = !pluginIsBypassed && (m_note_on >= 0 || envelopIsEnabled);
     Process(&outputs[0][offset], block, gate);
 
     offset = next;

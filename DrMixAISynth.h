@@ -305,7 +305,9 @@ private:
 
 enum EParams
 {
-  kParamEnvelope = 0,
+  kParamBypass = 0,
+
+  kParamEnvelope,
   kParamAttackTime,
   kParamDecayTime,
   kParamSustainLevel,
