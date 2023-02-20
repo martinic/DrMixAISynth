@@ -945,7 +945,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1340;
-				ORGANIZATIONNAME = Martinic;
+				ORGANIZATIONNAME = "Doctor Mix";
 			};
 			buildConfigurationList = 3DCA572B24583673009F1E70 /* Build configuration list for PBXProject "DrMixAISynth" */;
 			compatibilityVersion = "Xcode 13.0";
