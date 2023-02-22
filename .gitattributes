@@ -6,7 +6,9 @@
 *.h   text=auto
 *.mm  text=auto
 *.rc  text=auto
+
 *.txt text=auto
+*.md  text=auto
 
 *.cmd text eol=crlf
 *.sh  text eol=lf
