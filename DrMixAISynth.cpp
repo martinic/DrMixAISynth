@@ -3,6 +3,19 @@
 
 #include <string.h>
 
+class IKnobCustomControl: public IKnobMultiControl
+{
+public:
+	IKnobCustomControl(IPlugBase *pPlug, int x, int y, int paramIdx = -1, const IBitmap *pBitmap = NULL)
+	: IKnobMultiControl(pPlug, x, y, paramIdx, pBitmap) {}
+
+	void PromptUserInput()
+	{
+		mPlug->GetGUI()->PromptUserInput(this, mPlug->GetParam(mParamIdx), &mRECT, IGraphics::kPromptCustomWidth);
+		Redraw();
+	}
+};
+
 DrMixAISynth::DrMixAISynth(void *instance):
   IPLUG_CTOR(kNumParams, 1, instance),
   m_synth(new SawtoothSynth()),
@@ -49,37 +62,37 @@ DrMixAISynth::DrMixAISynth(void *instance):
   IBitmap knobBitmap(KNOB_PNG_ID, 88, 88, 129);
   IControl *pKnobControl;
 
-  pKnobControl = new IKnobMultiControl(this, 62, 150, kParamAttackTime, &knobBitmap);
+  pKnobControl = new IKnobCustomControl(this, 62, 150, kParamAttackTime, &knobBitmap);
   pKnobControl->SetTooltip("Attack Time");
   pGraphics->AttachControl(pKnobControl);
 
-  pKnobControl = new IKnobMultiControl(this, 62, 280, kParamDecayTime, &knobBitmap);
+  pKnobControl = new IKnobCustomControl(this, 62, 280, kParamDecayTime, &knobBitmap);
   pKnobControl->SetTooltip("Decay Time");
   pGraphics->AttachControl(pKnobControl);
 
-  pKnobControl = new IKnobMultiControl(this, 62, 410, kParamSustainLevel, &knobBitmap);
+  pKnobControl = new IKnobCustomControl(this, 62, 410, kParamSustainLevel, &knobBitmap);
   pKnobControl->SetTooltip("Sustain Level");
   pGraphics->AttachControl(pKnobControl);
 
-  pKnobControl = new IKnobMultiControl(this, 62, 540, kParamReleaseTime, &knobBitmap);
+  pKnobControl = new IKnobCustomControl(this, 62, 540, kParamReleaseTime, &knobBitmap);
   pKnobControl->SetTooltip("Release Time");
   pGraphics->AttachControl(pKnobControl);
 
   // Filter knobs
 
-  pKnobControl = new IKnobMultiControl(this, 214, 108, kParamCutoffFrequency, &knobBitmap);
+  pKnobControl = new IKnobCustomControl(this, 214, 108, kParamCutoffFrequency, &knobBitmap);
   pKnobControl->SetTooltip("Cutoff Frequency");
   pGraphics->AttachControl(pKnobControl);
 
-  pKnobControl = new IKnobMultiControl(this, 214, 238, kParamResonance, &knobBitmap);
+  pKnobControl = new IKnobCustomControl(this, 214, 238, kParamResonance, &knobBitmap);
   pKnobControl->SetTooltip("Resonance");
   pGraphics->AttachControl(pKnobControl);
 
-  pKnobControl = new IKnobMultiControl(this, 214, 368, kParamLFOFrequency, &knobBitmap);
+  pKnobControl = new IKnobCustomControl(this, 214, 368, kParamLFOFrequency, &knobBitmap);
   pKnobControl->SetTooltip("LFO Rate");
   pGraphics->AttachControl(pKnobControl);
 
-  pKnobControl = new IKnobMultiControl(this, 214, 498, kParamLFOAmplitude, &knobBitmap);
+  pKnobControl = new IKnobCustomControl(this, 214, 498, kParamLFOAmplitude, &knobBitmap);
   pKnobControl->SetTooltip("LFO Depth");
   pGraphics->AttachControl(pKnobControl);
 
