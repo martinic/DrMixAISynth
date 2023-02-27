@@ -1239,6 +1239,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					_DEBUG,
 					"DEBUG=1",
+					WDL_DENORMAL_WANTS_SCOPED_FTZ,
 					IPLUG_NO_CARBON_SUPPORT,
 					SWELL_NO_METAL,
 					"$(inherited)",
@@ -1279,6 +1280,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/IPlug/IPlug_Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(ndebug)",
+					WDL_DENORMAL_WANTS_SCOPED_FTZ,
 					IPLUG_NO_CARBON_SUPPORT,
 					SWELL_NO_METAL,
 					"$(inherited)",

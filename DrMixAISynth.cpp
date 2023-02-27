@@ -3,6 +3,8 @@
 
 #include <string.h>
 
+#include "WDL/denormal.h"
+
 class IKnobCustomControl: public IKnobMultiControl
 {
 public:
@@ -228,6 +230,10 @@ void DrMixAISynth::ProcessMidiQueue(const IMidiMsg *msg)
 
 void DrMixAISynth::ProcessDoubleReplacing(const double *const *inputs, double *const *outputs, int samples)
 {
+  #ifdef WDL_DENORMAL_FTZMODE
+  WDL_denormal_ftz_scope denormalFtz;
+  #endif
+
   bool pluginIsBypassed = IsBypassed() || GetParam<IBoolParam>(kParamBypass)->Bool();
   bool envelopIsEnabled = !m_synth->EnvelopeIsBypassed();
 
