@@ -2,6 +2,9 @@
 #define PLUG_MFR  "Martinic"
 #define PLUG_NAME "Doctor Mix AI Synth"
 
+// Double quotes, spaces OK, 16 chars max (optional).
+#define PLUG_SHORT_NAME "Dr Mix AI Synth"
+
 // No quotes or spaces.
 #define PLUG_CLASS_NAME DrMixAISynth
 
@@ -16,6 +19,7 @@
 
 #ifdef __APPLE__
 	// To-do: Set Product Bundle Indentifier in Xcode project to
+	// BUNDLE_DOMAIN.aax.BUNDLE_NAME (AAX target),
 	// BUNDLE_DOMAIN.audiounit.BUNDLE_NAME (AU target),
 	// BUNDLE_DOMAIN.clap.BUNDLE_NAME (CLAP target), and
 	// BUNDLE_DOMAIN.vst.BUNDLE_NAME (VST2 target).
@@ -62,7 +66,8 @@
 // Note: VST2 IDs can no longer be registered, so choose wisely to avoid
 // possible clashes with other VST2 plugins.
 
-// To-do: Set CFBundleSignature in AU/VST2-Info.plist to PLUG_UNIQUE_ID.
+// To-do: Set CFBundleSignature in AAX/AU/VST2-Info.plist to PLUG_UNIQUE_ID.
+// To-do: Register PLUG_MFR_ID with Avid.
 
 // To-do: Set AudioComponents manufacturer and subtype in AU-Info.plist to
 // PLUG_MFR_ID and PLUG_UNIQUE_ID.
