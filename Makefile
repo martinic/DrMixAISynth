@@ -88,6 +88,11 @@ $(IPLUGINC)
 "$(OUTDIR)/$(PROJECT)_VST2.obj" : $(SOURCES) IPlug/IPlugVST2.h
 	$(CPP) $(CPPFLAGS) /D VST2_API /wd4244 /Fo$@ /Fa"$(OUTDIR)/_$(PROJECT)_VST2.asm" "$(PROJECT).cpp"
 
+AAXFLAGS = /I AAX_SDK/Interfaces/ACF /FIIPlug/IPlugAAX_Assert.h
+
+"$(OUTDIR)/$(PROJECT)_AAX.obj" : $(SOURCES) IPlug/IPlugAAX.h
+	$(CPP) $(CPPFLAGS) $(AAXFLAGS) /D AAX_API /wd4244 /Fo$@ /Fa"$(OUTDIR)/_$(PROJECT)_AAX.asm" "$(PROJECT).cpp"
+
 RESOURCES = \
 "$(PROJECT).rc" \
 resource.h \
@@ -106,6 +111,9 @@ img/Knob@2x.png
 "$(OUTDIR)/$(PROJECT)_VST2.res" : $(RESOURCES)
 	$(RC) $(RCFLAGS) /D VST2_API /fo$@ "$(PROJECT).rc"
 
+"$(OUTDIR)/$(PROJECT)_AAX.res" : $(RESOURCES)
+	$(RC) $(RCFLAGS) /D AAX_API /fo$@ "$(PROJECT).rc"
+
 IPLUGOBJ = \
 "$(OUTDIR)/Hosts.obj" \
 "$(OUTDIR)/IControl.obj" \
@@ -115,13 +123,16 @@ IPLUGOBJ = \
 "$(OUTDIR)/IPlugBase.obj" \
 "$(OUTDIR)/IPlugStructs.obj"
 
-iplug : "$(OUTDIR)" $(IPLUGOBJ) "$(OUTDIR)/IPlugCLAP.obj" "$(OUTDIR)/IPlugVST2.obj"
+iplug : "$(OUTDIR)" $(IPLUGOBJ) "$(OUTDIR)/IPlugCLAP.obj" "$(OUTDIR)/IPlugVST2.obj" "$(OUTDIR)/IPlugAAX.obj"
 
 {IPlug}.cpp{$(OUTDIR)}.obj ::
 	$(CPP) $(CPPFLAGS) /Fo"$(OUTDIR)/" $<
 
 "$(OUTDIR)/IPlugVST2.obj" : IPlug/IPlugVST2.cpp
 	$(CPP) $(CPPFLAGS) /D IPLUG_LEGACY_PLUG_VER /Fo"$(OUTDIR)/" $**
+
+"$(OUTDIR)/IPlugAAX.obj" : IPlug/IPlugAAX.cpp
+	$(CPP) $(CPPFLAGS) $(AAXFLAGS) /Fo"$(OUTDIR)/" $**
 
 LIBPNGOBJ = \
 "$(OUTDIR)/png.obj" \
@@ -167,6 +178,45 @@ zlib : "$(OUTDIR)" $(ZLIBOBJ)
 {WDL/zlib}.c{$(OUTDIR)}.obj ::
 	$(CC) $(CFLAGS) /D NO_GZCOMPRESS /D Z_SOLO /Fo"$(OUTDIR)/" $<
 
+AAXOBJ = \
+"$(OUTDIR)/AAX_CACFUnknown.obj" \
+"$(OUTDIR)/AAX_CChunkDataParser.obj" \
+"$(OUTDIR)/AAX_CEffectGUI.obj" \
+"$(OUTDIR)/AAX_CEffectParameters.obj" \
+"$(OUTDIR)/AAX_CHostServices.obj" \
+"$(OUTDIR)/AAX_CMutex.obj" \
+"$(OUTDIR)/AAX_CPacketDispatcher.obj" \
+"$(OUTDIR)/AAX_CParameter.obj" \
+"$(OUTDIR)/AAX_CParameterManager.obj" \
+"$(OUTDIR)/AAX_CString.obj" \
+"$(OUTDIR)/AAX_CUIDs.obj" \
+"$(OUTDIR)/AAX_Exports.obj" \
+"$(OUTDIR)/AAX_IEffectGUI.obj" \
+"$(OUTDIR)/AAX_IEffectParameters.obj" \
+"$(OUTDIR)/AAX_Init.obj" \
+"$(OUTDIR)/AAX_VAutomationDelegate.obj" \
+"$(OUTDIR)/AAX_VCollection.obj" \
+"$(OUTDIR)/AAX_VComponentDescriptor.obj" \
+"$(OUTDIR)/AAX_VController.obj" \
+"$(OUTDIR)/AAX_VDescriptionHost.obj" \
+"$(OUTDIR)/AAX_VEffectDescriptor.obj" \
+"$(OUTDIR)/AAX_VFeatureInfo.obj" \
+"$(OUTDIR)/AAX_VHostServices.obj" \
+"$(OUTDIR)/AAX_VPageTable.obj" \
+"$(OUTDIR)/AAX_VPropertyMap.obj" \
+"$(OUTDIR)/AAX_VTransport.obj" \
+"$(OUTDIR)/AAX_VViewContainer.obj"
+
+aaxlib : "$(OUTDIR)" $(AAXOBJ)
+
+AAXFLAGS = $(AAXFLAGS) /D WIN32
+
+{AAX_SDK/Libs/AAXLibrary/source}.cpp{$(OUTDIR)}.obj ::
+	$(CPP) $(CPPFLAGS) $(AAXFLAGS) /I AAX_SDK/Interfaces /Fo"$(OUTDIR)/" $<
+
+"$(OUTDIR)/AAX_Exports.obj" : AAX_SDK/Interfaces/AAX_Exports.cpp
+	$(CPP) $(CPPFLAGS) $(AAXFLAGS) /Fo"$(OUTDIR)/" $**
+
 OBJECTS = \
 $(IPLUGOBJ) \
 $(LIBPNGOBJ) \
@@ -191,9 +241,15 @@ wininet.lib
 	@echo ^ ^ ^ ^ ^ ^ ^ ^ link $(LINKFLAGS) /out:$@ "$(OUTDIR)/$(PROJECT)_VST2.obj" ...
 	@link $(LINKFLAGS) /out:$@ /implib:"$(OUTDIR)/$(PROJECT)_VST2.lib" $** $(LIBS)
 
+"$(OUTDIR)/$(OUTFILE).aaxplugin" : "$(OUTDIR)/$(PROJECT)_AAX.obj" "$(OUTDIR)/$(PROJECT)_AAX.res" "$(OUTDIR)/IPlugAAX.obj" $(OBJECTS) $(AAXOBJ)
+	@echo ^ ^ ^ ^ ^ ^ ^ ^ link $(LINKFLAGS) /out:$@ "$(OUTDIR)/$(PROJECT)_AAX.obj" ...
+	@link $(LINKFLAGS) /out:$@ /implib:"$(OUTDIR)/$(PROJECT)_AAX.lib" $** $(LIBS)
+
 clap : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).clap"
 
 vst2 : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).dll"
+
+aax : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).aaxplugin"
 
 dist : clap vst2
 !IFDEF REMINDER
