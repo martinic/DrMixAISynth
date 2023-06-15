@@ -306,6 +306,131 @@
 		3DDC2F3B245836F900882FA4 /* DrMixAISynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC2F3A245836F900882FA4 /* DrMixAISynth.cpp */; settings = {COMPILER_FLAGS = "-DVST2_API"; }; };
 		3DDC2F3D2458370100882FA4 /* DrMixAISynth.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DDC2F3C2458370100882FA4 /* DrMixAISynth.h */; };
 		3DDC2F3F2458371C00882FA4 /* resource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DDC2F3E2458371C00882FA4 /* resource.h */; };
+		3DFC6E912A3B0EAA008D9692 /* DrMixAISynth.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DDC2F3C2458370100882FA4 /* DrMixAISynth.h */; };
+		3DFC6E922A3B0EAA008D9692 /* resource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DDC2F3E2458371C00882FA4 /* resource.h */; };
+		3DFC6E932A3B0EAA008D9692 /* Containers.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C1824584A5000527485 /* Containers.h */; };
+		3DFC6E942A3B0EAA008D9692 /* Hosts.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C1A24584A5000527485 /* Hosts.h */; };
+		3DFC6E952A3B0EAA008D9692 /* IControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C2724584A5100527485 /* IControl.h */; };
+		3DFC6E962A3B0EAA008D9692 /* IGraphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C2324584A5100527485 /* IGraphics.h */; };
+		3DFC6E972A3B0EAA008D9692 /* IGraphicsCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C2924584A5100527485 /* IGraphicsCocoa.h */; };
+		3DFC6E982A3B0EAA008D9692 /* IGraphicsMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C1E24584A5000527485 /* IGraphicsMac.h */; };
+		3DFC6E992A3B0EAA008D9692 /* IMidiQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27758125162D6300F354B7 /* IMidiQueue.h */; };
+		3DFC6E9A2A3B0EAA008D9692 /* IParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C2424584A5100527485 /* IParam.h */; };
+		3DFC6E9B2A3B0EAA008D9692 /* IPlug_include_in_plug_hdr.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C1F24584A5000527485 /* IPlug_include_in_plug_hdr.h */; };
+		3DFC6E9C2A3B0EAA008D9692 /* IPlug_include_in_plug_src.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C2024584A5100527485 /* IPlug_include_in_plug_src.h */; };
+		3DFC6E9D2A3B0EAA008D9692 /* IPlugBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C2D24584A5200527485 /* IPlugBase.h */; };
+		3DFC6E9F2A3B0EAA008D9692 /* IPlugStructs.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C2624584A5100527485 /* IPlugStructs.h */; };
+		3DFC6EA02A3B0EAA008D9692 /* assocarray.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D4246D7760000BAC95 /* assocarray.h */; };
+		3DFC6EA12A3B0EAA008D9692 /* db2val.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D3246D7760000BAC95 /* db2val.h */; };
+		3DFC6EA22A3B0EAA008D9692 /* denormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27758425162F8300F354B7 /* denormal.h */; };
+		3DFC6EA32A3B0EAA008D9692 /* heapbuf.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D2246D7760000BAC95 /* heapbuf.h */; };
+		3DFC6EA42A3B0EAA008D9692 /* mergesort.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D8246D7760000BAC95 /* mergesort.h */; };
+		3DFC6EA52A3B0EAA008D9692 /* mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5DB246D7760000BAC95 /* mutex.h */; };
+		3DFC6EA62A3B0EAA008D9692 /* png.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C5B24584CAF00527485 /* png.h */; };
+		3DFC6EA72A3B0EAA008D9692 /* pngconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C7624584D9500527485 /* pngconf.h */; };
+		3DFC6EA82A3B0EAA008D9692 /* pngdebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C7524584D9500527485 /* pngdebug.h */; };
+		3DFC6EA92A3B0EAA008D9692 /* pnginfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C7C24584DBE00527485 /* pnginfo.h */; };
+		3DFC6EAA2A3B0EAA008D9692 /* pnglibconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C7424584D9500527485 /* pnglibconf.h */; };
+		3DFC6EAB2A3B0EAA008D9692 /* pngpriv.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C7A24584DBE00527485 /* pngpriv.h */; };
+		3DFC6EAC2A3B0EAA008D9692 /* pngstruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C7B24584DBE00527485 /* pngstruct.h */; };
+		3DFC6EAD2A3B0EAA008D9692 /* curverasterbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C7024584D5300527485 /* curverasterbuffer.h */; };
+		3DFC6EAE2A3B0EAA008D9692 /* lice.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C4B24584BA300527485 /* lice.h */; };
+		3DFC6EAF2A3B0EAA008D9692 /* lice_bezier.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C7124584D5400527485 /* lice_bezier.h */; };
+		3DFC6EB02A3B0EAA008D9692 /* lice_combine.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C5624584BE500527485 /* lice_combine.h */; };
+		3DFC6EB12A3B0EAA008D9692 /* lice_extended.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C5524584BE500527485 /* lice_extended.h */; };
+		3DFC6EB22A3B0EAA008D9692 /* lice_text.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C4C24584BA300527485 /* lice_text.h */; };
+		3DFC6EB32A3B0EAA008D9692 /* ptrlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D1246D7760000BAC95 /* ptrlist.h */; };
+		3DFC6EB42A3B0EAA008D9692 /* queue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D5246D7760000BAC95 /* queue.h */; };
+		3DFC6EB52A3B0EAA008D9692 /* swell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529CA92458531100527485 /* swell.h */; };
+		3DFC6EB62A3B0EAA008D9692 /* swell-functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529CAE245853D000527485 /* swell-functions.h */; };
+		3DFC6EB72A3B0EAA008D9692 /* swell-gdi-internalpool.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D00CE9024603C2000E2E5A4 /* swell-gdi-internalpool.h */; };
+		3DFC6EB82A3B0EAA008D9692 /* swell-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529CAD245853D000527485 /* swell-internal.h */; };
+		3DFC6EB92A3B0EAA008D9692 /* swell-types.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529CB1245853F000527485 /* swell-types.h */; };
+		3DFC6EBA2A3B0EAA008D9692 /* wdlatomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D6246D7760000BAC95 /* wdlatomic.h */; };
+		3DFC6EBB2A3B0EAA008D9692 /* wdlcstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D7246D7760000BAC95 /* wdlcstring.h */; };
+		3DFC6EBC2A3B0EAA008D9692 /* wdlendian.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D9246D7760000BAC95 /* wdlendian.h */; };
+		3DFC6EBD2A3B0EAA008D9692 /* wdlstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5DC246D7760000BAC95 /* wdlstring.h */; };
+		3DFC6EBE2A3B0EAA008D9692 /* wdltypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5DA246D7760000BAC95 /* wdltypes.h */; };
+		3DFC6EBF2A3B0EAA008D9692 /* crc32.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C8D24584F3400527485 /* crc32.h */; };
+		3DFC6EC02A3B0EAA008D9692 /* inffast.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C8724584F3300527485 /* inffast.h */; };
+		3DFC6EC12A3B0EAA008D9692 /* inffixed.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C8C24584F3400527485 /* inffixed.h */; };
+		3DFC6EC22A3B0EAA008D9692 /* inflate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C8424584F3200527485 /* inflate.h */; };
+		3DFC6EC32A3B0EAA008D9692 /* inftrees.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C9324584F3500527485 /* inftrees.h */; };
+		3DFC6EC42A3B0EAA008D9692 /* trees.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C8524584F3200527485 /* trees.h */; };
+		3DFC6EC52A3B0EAA008D9692 /* zconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C8B24584F3300527485 /* zconf.h */; };
+		3DFC6EC62A3B0EAA008D9692 /* zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C8A24584F3300527485 /* zlib.h */; };
+		3DFC6EC72A3B0EAA008D9692 /* zutil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C9224584F3500527485 /* zutil.h */; };
+		3DFC6ECA2A3B0EAA008D9692 /* DrMixAISynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC2F3A245836F900882FA4 /* DrMixAISynth.cpp */; settings = {COMPILER_FLAGS = "-DAAX_API -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6ECB2A3B0EAA008D9692 /* Hosts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C2A24584A5200527485 /* Hosts.cpp */; };
+		3DFC6ECC2A3B0EAA008D9692 /* IControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C1B24584A5000527485 /* IControl.cpp */; };
+		3DFC6ECD2A3B0EAA008D9692 /* IGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C1924584A5000527485 /* IGraphics.cpp */; };
+		3DFC6ECE2A3B0EAA008D9692 /* IGraphicsCocoa.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C2B24584A5200527485 /* IGraphicsCocoa.mm */; };
+		3DFC6ECF2A3B0EAA008D9692 /* IGraphicsMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C2C24584A5200527485 /* IGraphicsMac.mm */; };
+		3DFC6ED02A3B0EAA008D9692 /* IParam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C2224584A5100527485 /* IParam.cpp */; };
+		3DFC6ED12A3B0EAA008D9692 /* IPlugBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C2124584A5100527485 /* IPlugBase.cpp */; };
+		3DFC6ED32A3B0EAA008D9692 /* IPlugStructs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C2E24584A5200527485 /* IPlugStructs.cpp */; };
+		3DFC6ED42A3B0EAA008D9692 /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C6024584CAF00527485 /* png.c */; };
+		3DFC6ED52A3B0EAA008D9692 /* pngerror.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C6224584CAF00527485 /* pngerror.c */; };
+		3DFC6ED62A3B0EAA008D9692 /* pngget.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C5C24584CAF00527485 /* pngget.c */; };
+		3DFC6ED72A3B0EAA008D9692 /* pngmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C5A24584CAF00527485 /* pngmem.c */; };
+		3DFC6ED82A3B0EAA008D9692 /* pngread.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C5D24584CAF00527485 /* pngread.c */; };
+		3DFC6ED92A3B0EAA008D9692 /* pngrio.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C5E24584CAF00527485 /* pngrio.c */; };
+		3DFC6EDA2A3B0EAA008D9692 /* pngrtran.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C5F24584CAF00527485 /* pngrtran.c */; };
+		3DFC6EDB2A3B0EAA008D9692 /* pngrutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C6124584CAF00527485 /* pngrutil.c */; };
+		3DFC6EDC2A3B0EAA008D9692 /* pngset.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C6424584CAF00527485 /* pngset.c */; };
+		3DFC6EDD2A3B0EAA008D9692 /* pngtrans.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C6324584CAF00527485 /* pngtrans.c */; };
+		3DFC6EDE2A3B0EAA008D9692 /* lice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C4724584B2D00527485 /* lice.cpp */; };
+		3DFC6EDF2A3B0EAA008D9692 /* lice_arc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C4924584BA300527485 /* lice_arc.cpp */; };
+		3DFC6EE02A3B0EAA008D9692 /* lice_line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C4D24584BA300527485 /* lice_line.cpp */; };
+		3DFC6EE12A3B0EAA008D9692 /* lice_png.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C4E24584BA400527485 /* lice_png.cpp */; };
+		3DFC6EE22A3B0EAA008D9692 /* lice_textnew.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C4A24584BA300527485 /* lice_textnew.cpp */; };
+		3DFC6EE32A3B0EAA008D9692 /* swell-gdi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D529CAA2458531100527485 /* swell-gdi.mm */; };
+		3DFC6EE42A3B0EAA008D9692 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C8624584F3200527485 /* adler32.c */; settings = {COMPILER_FLAGS = "-DNO_GZCOMPRESS -DZ_SOLO"; }; };
+		3DFC6EE52A3B0EAA008D9692 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C8224584F3200527485 /* crc32.c */; settings = {COMPILER_FLAGS = "-DNO_GZCOMPRESS -DZ_SOLO"; }; };
+		3DFC6EE62A3B0EAA008D9692 /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C8824584F3300527485 /* infback.c */; settings = {COMPILER_FLAGS = "-DNO_GZCOMPRESS -DZ_SOLO"; }; };
+		3DFC6EE72A3B0EAA008D9692 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C8924584F3300527485 /* inffast.c */; settings = {COMPILER_FLAGS = "-DNO_GZCOMPRESS -DZ_SOLO"; }; };
+		3DFC6EE82A3B0EAA008D9692 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C8E24584F3400527485 /* inflate.c */; settings = {COMPILER_FLAGS = "-DNO_GZCOMPRESS -DZ_SOLO"; }; };
+		3DFC6EE92A3B0EAA008D9692 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C9024584F3400527485 /* inftrees.c */; settings = {COMPILER_FLAGS = "-DNO_GZCOMPRESS -DZ_SOLO"; }; };
+		3DFC6EEA2A3B0EAA008D9692 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C8124584F3200527485 /* trees.c */; settings = {COMPILER_FLAGS = "-DNO_GZCOMPRESS -DZ_SOLO"; }; };
+		3DFC6EEB2A3B0EAA008D9692 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C9124584F3400527485 /* zutil.c */; settings = {COMPILER_FLAGS = "-DNO_GZCOMPRESS -DZ_SOLO"; }; };
+		3DFC6EED2A3B0EAA008D9692 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D529C13245847D400527485 /* Cocoa.framework */; };
+		3DFC6EEF2A3B0EAA008D9692 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412929A3984800CB37ED /* Background.png */; };
+		3DFC6EF02A3B0EAA008D9692 /* Switch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412829A3984800CB37ED /* Switch.png */; };
+		3DFC6EF12A3B0EAA008D9692 /* Knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412A29A3984800CB37ED /* Knob.png */; };
+		3DFC6EF22A3B0EAA008D9692 /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412B29A3985500CB37ED /* Background@2x.png */; };
+		3DFC6EF32A3B0EAA008D9692 /* Switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412D29A3985500CB37ED /* Switch@2x.png */; };
+		3DFC6EF42A3B0EAA008D9692 /* Knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D25412C29A3985500CB37ED /* Knob@2x.png */; };
+		3DFC6EFD2A3B1022008D9692 /* IPlugAAX_Assert.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DFC6EFA2A3B1022008D9692 /* IPlugAAX_Assert.h */; };
+		3DFC6EFE2A3B1022008D9692 /* IPlugAAX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6EFB2A3B1022008D9692 /* IPlugAAX.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6EFF2A3B1022008D9692 /* IPlugAAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DFC6EFC2A3B1022008D9692 /* IPlugAAX.h */; };
+		3DFC6F062A3B10C4008D9692 /* AAX_Exports.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F052A3B10C4008D9692 /* AAX_Exports.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F212A3B1126008D9692 /* AAX_CParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F072A3B1125008D9692 /* AAX_CParameter.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F222A3B1126008D9692 /* AAX_IEffectGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F082A3B1125008D9692 /* AAX_IEffectGUI.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F232A3B1126008D9692 /* AAX_CPacketDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F092A3B1125008D9692 /* AAX_CPacketDispatcher.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F242A3B1126008D9692 /* AAX_CEffectGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F0A2A3B1125008D9692 /* AAX_CEffectGUI.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F252A3B1126008D9692 /* AAX_VFeatureInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F0B2A3B1125008D9692 /* AAX_VFeatureInfo.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F262A3B1126008D9692 /* AAX_VDescriptionHost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F0C2A3B1125008D9692 /* AAX_VDescriptionHost.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F272A3B1126008D9692 /* AAX_Init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F0D2A3B1125008D9692 /* AAX_Init.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F282A3B1126008D9692 /* AAX_VPropertyMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F0E2A3B1125008D9692 /* AAX_VPropertyMap.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F292A3B1126008D9692 /* AAX_CParameterManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F0F2A3B1125008D9692 /* AAX_CParameterManager.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F2A2A3B1126008D9692 /* AAX_VViewContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F102A3B1125008D9692 /* AAX_VViewContainer.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F2B2A3B1126008D9692 /* AAX_VPageTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F112A3B1125008D9692 /* AAX_VPageTable.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F2C2A3B1126008D9692 /* AAX_CMutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F122A3B1125008D9692 /* AAX_CMutex.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F2D2A3B1126008D9692 /* AAX_CEffectParameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F132A3B1125008D9692 /* AAX_CEffectParameters.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F2E2A3B1126008D9692 /* AAX_CHostServices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F142A3B1125008D9692 /* AAX_CHostServices.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F2F2A3B1126008D9692 /* AAX_VEffectDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F152A3B1125008D9692 /* AAX_VEffectDescriptor.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F302A3B1126008D9692 /* AAX_CString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F162A3B1125008D9692 /* AAX_CString.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F312A3B1126008D9692 /* AAX_IEffectParameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F172A3B1125008D9692 /* AAX_IEffectParameters.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F322A3B1126008D9692 /* AAX_VCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F182A3B1125008D9692 /* AAX_VCollection.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F332A3B1126008D9692 /* AAX_CUIDs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F192A3B1125008D9692 /* AAX_CUIDs.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F342A3B1126008D9692 /* AAX_VHostServices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F1A2A3B1125008D9692 /* AAX_VHostServices.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F352A3B1126008D9692 /* AAX_VComponentDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F1B2A3B1125008D9692 /* AAX_VComponentDescriptor.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F362A3B1126008D9692 /* AAX_VAutomationDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F1C2A3B1125008D9692 /* AAX_VAutomationDelegate.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F372A3B1126008D9692 /* AAX_CChunkDataParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F1D2A3B1125008D9692 /* AAX_CChunkDataParser.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F382A3B1126008D9692 /* AAX_VController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F1E2A3B1126008D9692 /* AAX_VController.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F392A3B1126008D9692 /* AAX_CACFUnknown.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F1F2A3B1126008D9692 /* AAX_CACFUnknown.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F3A2A3B1126008D9692 /* AAX_VTransport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC6F202A3B1126008D9692 /* AAX_VTransport.cpp */; settings = {COMPILER_FLAGS = "-IAAX_SDK/Interfaces -IAAX_SDK/Interfaces/ACF --include IPlug/IPlugAAX_Assert.h"; }; };
+		3DFC6F3C2A3B1593008D9692 /* filename.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DFC6F3B2A3B1593008D9692 /* filename.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -426,6 +551,39 @@
 		3DDC2F3A245836F900882FA4 /* DrMixAISynth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrMixAISynth.cpp; sourceTree = "<group>"; };
 		3DDC2F3C2458370100882FA4 /* DrMixAISynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrMixAISynth.h; sourceTree = "<group>"; };
 		3DDC2F3E2458371C00882FA4 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resource.h; sourceTree = "<group>"; };
+		3DFC6EF82A3B0EAA008D9692 /* Doctor Mix AI Synth.aaxplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Doctor Mix AI Synth.aaxplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFC6EF92A3B0EAA008D9692 /* AAX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AAX-Info.plist"; sourceTree = "<group>"; };
+		3DFC6EFA2A3B1022008D9692 /* IPlugAAX_Assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPlugAAX_Assert.h; path = IPlug/IPlugAAX_Assert.h; sourceTree = "<group>"; };
+		3DFC6EFB2A3B1022008D9692 /* IPlugAAX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IPlugAAX.cpp; path = IPlug/IPlugAAX.cpp; sourceTree = "<group>"; };
+		3DFC6EFC2A3B1022008D9692 /* IPlugAAX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPlugAAX.h; path = IPlug/IPlugAAX.h; sourceTree = "<group>"; };
+		3DFC6F052A3B10C4008D9692 /* AAX_Exports.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_Exports.cpp; path = "AAX_SDK/Interfaces/AAX_Exports.cpp"; sourceTree = "<group>"; };
+		3DFC6F072A3B1125008D9692 /* AAX_CParameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CParameter.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CParameter.cpp"; sourceTree = "<group>"; };
+		3DFC6F082A3B1125008D9692 /* AAX_IEffectGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_IEffectGUI.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_IEffectGUI.cpp"; sourceTree = "<group>"; };
+		3DFC6F092A3B1125008D9692 /* AAX_CPacketDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CPacketDispatcher.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CPacketDispatcher.cpp"; sourceTree = "<group>"; };
+		3DFC6F0A2A3B1125008D9692 /* AAX_CEffectGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CEffectGUI.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CEffectGUI.cpp"; sourceTree = "<group>"; };
+		3DFC6F0B2A3B1125008D9692 /* AAX_VFeatureInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VFeatureInfo.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VFeatureInfo.cpp"; sourceTree = "<group>"; };
+		3DFC6F0C2A3B1125008D9692 /* AAX_VDescriptionHost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VDescriptionHost.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VDescriptionHost.cpp"; sourceTree = "<group>"; };
+		3DFC6F0D2A3B1125008D9692 /* AAX_Init.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_Init.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_Init.cpp"; sourceTree = "<group>"; };
+		3DFC6F0E2A3B1125008D9692 /* AAX_VPropertyMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VPropertyMap.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VPropertyMap.cpp"; sourceTree = "<group>"; };
+		3DFC6F0F2A3B1125008D9692 /* AAX_CParameterManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CParameterManager.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CParameterManager.cpp"; sourceTree = "<group>"; };
+		3DFC6F102A3B1125008D9692 /* AAX_VViewContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VViewContainer.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VViewContainer.cpp"; sourceTree = "<group>"; };
+		3DFC6F112A3B1125008D9692 /* AAX_VPageTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VPageTable.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VPageTable.cpp"; sourceTree = "<group>"; };
+		3DFC6F122A3B1125008D9692 /* AAX_CMutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CMutex.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CMutex.cpp"; sourceTree = "<group>"; };
+		3DFC6F132A3B1125008D9692 /* AAX_CEffectParameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CEffectParameters.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CEffectParameters.cpp"; sourceTree = "<group>"; };
+		3DFC6F142A3B1125008D9692 /* AAX_CHostServices.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CHostServices.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CHostServices.cpp"; sourceTree = "<group>"; };
+		3DFC6F152A3B1125008D9692 /* AAX_VEffectDescriptor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VEffectDescriptor.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VEffectDescriptor.cpp"; sourceTree = "<group>"; };
+		3DFC6F162A3B1125008D9692 /* AAX_CString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CString.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CString.cpp"; sourceTree = "<group>"; };
+		3DFC6F172A3B1125008D9692 /* AAX_IEffectParameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_IEffectParameters.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_IEffectParameters.cpp"; sourceTree = "<group>"; };
+		3DFC6F182A3B1125008D9692 /* AAX_VCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VCollection.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VCollection.cpp"; sourceTree = "<group>"; };
+		3DFC6F192A3B1125008D9692 /* AAX_CUIDs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CUIDs.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CUIDs.cpp"; sourceTree = "<group>"; };
+		3DFC6F1A2A3B1125008D9692 /* AAX_VHostServices.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VHostServices.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VHostServices.cpp"; sourceTree = "<group>"; };
+		3DFC6F1B2A3B1125008D9692 /* AAX_VComponentDescriptor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VComponentDescriptor.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VComponentDescriptor.cpp"; sourceTree = "<group>"; };
+		3DFC6F1C2A3B1125008D9692 /* AAX_VAutomationDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VAutomationDelegate.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VAutomationDelegate.cpp"; sourceTree = "<group>"; };
+		3DFC6F1D2A3B1125008D9692 /* AAX_CChunkDataParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CChunkDataParser.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CChunkDataParser.cpp"; sourceTree = "<group>"; };
+		3DFC6F1E2A3B1126008D9692 /* AAX_VController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VController.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VController.cpp"; sourceTree = "<group>"; };
+		3DFC6F1F2A3B1126008D9692 /* AAX_CACFUnknown.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_CACFUnknown.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_CACFUnknown.cpp"; sourceTree = "<group>"; };
+		3DFC6F202A3B1126008D9692 /* AAX_VTransport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AAX_VTransport.cpp; path = "AAX_SDK/Libs/AAXLibrary/source/AAX_VTransport.cpp"; sourceTree = "<group>"; };
+		3DFC6F3B2A3B1593008D9692 /* filename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = filename.h; path = WDL/filename.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +612,14 @@
 			files = (
 				3D529C16245847DD00527485 /* Carbon.framework in Frameworks */,
 				3D529C14245847D400527485 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFC6EEC2A3B0EAA008D9692 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFC6EED2A3B0EAA008D9692 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +686,9 @@
 				3D529C2424584A5100527485 /* IParam.h */,
 				3D529C1F24584A5000527485 /* IPlug_include_in_plug_hdr.h */,
 				3D529C2024584A5100527485 /* IPlug_include_in_plug_src.h */,
+				3DFC6EFB2A3B1022008D9692 /* IPlugAAX.cpp */,
+				3DFC6EFC2A3B1022008D9692 /* IPlugAAX.h */,
+				3DFC6EFA2A3B1022008D9692 /* IPlugAAX_Assert.h */,
 				3D738528246E937800582D74 /* IPlugAU.cpp */,
 				3D73852A246E937800582D74 /* IPlugAU.h */,
 				3D73852B246E937800582D74 /* IPlugAU.r */,
@@ -608,6 +777,7 @@
 				3D31A5D4246D7760000BAC95 /* assocarray.h */,
 				3D31A5D3246D7760000BAC95 /* db2val.h */,
 				3D27758425162F8300F354B7 /* denormal.h */,
+				3DFC6F3B2A3B1593008D9692 /* filename.h */,
 				3D31A5D2246D7760000BAC95 /* heapbuf.h */,
 				3D31A5D8246D7760000BAC95 /* mergesort.h */,
 				3D31A5DB246D7760000BAC95 /* mutex.h */,
@@ -664,11 +834,13 @@
 				3D738596246E962400582D74 /* DrMixAISynth.exp */,
 				3DDC2F3C2458370100882FA4 /* DrMixAISynth.h */,
 				3DDC2F3E2458371C00882FA4 /* resource.h */,
+				3DFC6EF92A3B0EAA008D9692 /* AAX-Info.plist */,
 				3D738595246E962400582D74 /* AU-Info.plist */,
 				3D144CC328C4F93B003FA6F7 /* CLAP-Info.plist */,
 				3D529C112458448E00527485 /* VST2-Info.plist */,
 				3D529C17245849E000527485 /* IPlug */,
 				3D529CA72458517C00527485 /* WDL */,
+				3DFC6F002A3B105A008D9692 /* AAX_SDK */,
 				3D144C5128C4F905003FA6F7 /* CLAP_SDK */,
 				3DC066E924599DCC00516437 /* VST2_SDK */,
 				3D25412629A397FE00CB37ED /* Resources */,
@@ -683,8 +855,75 @@
 				3D144CC228C4F93B003FA6F7 /* Doctor Mix AI Synth.clap */,
 				3D43DA10246E8C8D004AFF08 /* Doctor Mix AI Synth.component */,
 				3DCA573024583673009F1E70 /* Doctor Mix AI Synth.vst */,
+				3DFC6EF82A3B0EAA008D9692 /* Doctor Mix AI Synth.aaxplugin */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3DFC6F002A3B105A008D9692 /* AAX_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC6F012A3B1065008D9692 /* Interfaces */,
+				3DFC6F022A3B1071008D9692 /* Libs */,
+			);
+			name = AAX_SDK;
+			sourceTree = "<group>";
+		};
+		3DFC6F012A3B1065008D9692 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC6F052A3B10C4008D9692 /* AAX_Exports.cpp */,
+			);
+			name = Interfaces;
+			sourceTree = "<group>";
+		};
+		3DFC6F022A3B1071008D9692 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC6F032A3B1081008D9692 /* AAXLibrary */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		3DFC6F032A3B1081008D9692 /* AAXLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC6F042A3B108E008D9692 /* source */,
+			);
+			name = AAXLibrary;
+			sourceTree = "<group>";
+		};
+		3DFC6F042A3B108E008D9692 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC6F1F2A3B1126008D9692 /* AAX_CACFUnknown.cpp */,
+				3DFC6F1D2A3B1125008D9692 /* AAX_CChunkDataParser.cpp */,
+				3DFC6F0A2A3B1125008D9692 /* AAX_CEffectGUI.cpp */,
+				3DFC6F132A3B1125008D9692 /* AAX_CEffectParameters.cpp */,
+				3DFC6F142A3B1125008D9692 /* AAX_CHostServices.cpp */,
+				3DFC6F122A3B1125008D9692 /* AAX_CMutex.cpp */,
+				3DFC6F092A3B1125008D9692 /* AAX_CPacketDispatcher.cpp */,
+				3DFC6F072A3B1125008D9692 /* AAX_CParameter.cpp */,
+				3DFC6F0F2A3B1125008D9692 /* AAX_CParameterManager.cpp */,
+				3DFC6F162A3B1125008D9692 /* AAX_CString.cpp */,
+				3DFC6F192A3B1125008D9692 /* AAX_CUIDs.cpp */,
+				3DFC6F082A3B1125008D9692 /* AAX_IEffectGUI.cpp */,
+				3DFC6F172A3B1125008D9692 /* AAX_IEffectParameters.cpp */,
+				3DFC6F0D2A3B1125008D9692 /* AAX_Init.cpp */,
+				3DFC6F1C2A3B1125008D9692 /* AAX_VAutomationDelegate.cpp */,
+				3DFC6F182A3B1125008D9692 /* AAX_VCollection.cpp */,
+				3DFC6F1B2A3B1125008D9692 /* AAX_VComponentDescriptor.cpp */,
+				3DFC6F1E2A3B1126008D9692 /* AAX_VController.cpp */,
+				3DFC6F0C2A3B1125008D9692 /* AAX_VDescriptionHost.cpp */,
+				3DFC6F152A3B1125008D9692 /* AAX_VEffectDescriptor.cpp */,
+				3DFC6F0B2A3B1125008D9692 /* AAX_VFeatureInfo.cpp */,
+				3DFC6F1A2A3B1125008D9692 /* AAX_VHostServices.cpp */,
+				3DFC6F112A3B1125008D9692 /* AAX_VPageTable.cpp */,
+				3DFC6F0E2A3B1125008D9692 /* AAX_VPropertyMap.cpp */,
+				3DFC6F202A3B1126008D9692 /* AAX_VTransport.cpp */,
+				3DFC6F102A3B1125008D9692 /* AAX_VViewContainer.cpp */,
+			);
+			name = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -880,6 +1119,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3DFC6E902A3B0EAA008D9692 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFC6E912A3B0EAA008D9692 /* DrMixAISynth.h in Headers */,
+				3DFC6E922A3B0EAA008D9692 /* resource.h in Headers */,
+				3DFC6E932A3B0EAA008D9692 /* Containers.h in Headers */,
+				3DFC6E942A3B0EAA008D9692 /* Hosts.h in Headers */,
+				3DFC6E952A3B0EAA008D9692 /* IControl.h in Headers */,
+				3DFC6E962A3B0EAA008D9692 /* IGraphics.h in Headers */,
+				3DFC6E972A3B0EAA008D9692 /* IGraphicsCocoa.h in Headers */,
+				3DFC6E982A3B0EAA008D9692 /* IGraphicsMac.h in Headers */,
+				3DFC6E992A3B0EAA008D9692 /* IMidiQueue.h in Headers */,
+				3DFC6E9A2A3B0EAA008D9692 /* IParam.h in Headers */,
+				3DFC6E9B2A3B0EAA008D9692 /* IPlug_include_in_plug_hdr.h in Headers */,
+				3DFC6E9C2A3B0EAA008D9692 /* IPlug_include_in_plug_src.h in Headers */,
+				3DFC6EFF2A3B1022008D9692 /* IPlugAAX.h in Headers */,
+				3DFC6EFD2A3B1022008D9692 /* IPlugAAX_Assert.h in Headers */,
+				3DFC6E9D2A3B0EAA008D9692 /* IPlugBase.h in Headers */,
+				3DFC6E9F2A3B0EAA008D9692 /* IPlugStructs.h in Headers */,
+				3DFC6EA02A3B0EAA008D9692 /* assocarray.h in Headers */,
+				3DFC6EA12A3B0EAA008D9692 /* db2val.h in Headers */,
+				3DFC6EA22A3B0EAA008D9692 /* denormal.h in Headers */,
+				3DFC6F3C2A3B1593008D9692 /* filename.h in Headers */,
+				3DFC6EA32A3B0EAA008D9692 /* heapbuf.h in Headers */,
+				3DFC6EA42A3B0EAA008D9692 /* mergesort.h in Headers */,
+				3DFC6EA52A3B0EAA008D9692 /* mutex.h in Headers */,
+				3DFC6EA62A3B0EAA008D9692 /* png.h in Headers */,
+				3DFC6EA72A3B0EAA008D9692 /* pngconf.h in Headers */,
+				3DFC6EA82A3B0EAA008D9692 /* pngdebug.h in Headers */,
+				3DFC6EA92A3B0EAA008D9692 /* pnginfo.h in Headers */,
+				3DFC6EAA2A3B0EAA008D9692 /* pnglibconf.h in Headers */,
+				3DFC6EAB2A3B0EAA008D9692 /* pngpriv.h in Headers */,
+				3DFC6EAC2A3B0EAA008D9692 /* pngstruct.h in Headers */,
+				3DFC6EAD2A3B0EAA008D9692 /* curverasterbuffer.h in Headers */,
+				3DFC6EAE2A3B0EAA008D9692 /* lice.h in Headers */,
+				3DFC6EAF2A3B0EAA008D9692 /* lice_bezier.h in Headers */,
+				3DFC6EB02A3B0EAA008D9692 /* lice_combine.h in Headers */,
+				3DFC6EB12A3B0EAA008D9692 /* lice_extended.h in Headers */,
+				3DFC6EB22A3B0EAA008D9692 /* lice_text.h in Headers */,
+				3DFC6EB32A3B0EAA008D9692 /* ptrlist.h in Headers */,
+				3DFC6EB42A3B0EAA008D9692 /* queue.h in Headers */,
+				3DFC6EB52A3B0EAA008D9692 /* swell.h in Headers */,
+				3DFC6EB62A3B0EAA008D9692 /* swell-functions.h in Headers */,
+				3DFC6EB72A3B0EAA008D9692 /* swell-gdi-internalpool.h in Headers */,
+				3DFC6EB82A3B0EAA008D9692 /* swell-internal.h in Headers */,
+				3DFC6EB92A3B0EAA008D9692 /* swell-types.h in Headers */,
+				3DFC6EBA2A3B0EAA008D9692 /* wdlatomic.h in Headers */,
+				3DFC6EBB2A3B0EAA008D9692 /* wdlcstring.h in Headers */,
+				3DFC6EBC2A3B0EAA008D9692 /* wdlendian.h in Headers */,
+				3DFC6EBD2A3B0EAA008D9692 /* wdlstring.h in Headers */,
+				3DFC6EBE2A3B0EAA008D9692 /* wdltypes.h in Headers */,
+				3DFC6EBF2A3B0EAA008D9692 /* crc32.h in Headers */,
+				3DFC6EC02A3B0EAA008D9692 /* inffast.h in Headers */,
+				3DFC6EC12A3B0EAA008D9692 /* inffixed.h in Headers */,
+				3DFC6EC22A3B0EAA008D9692 /* inflate.h in Headers */,
+				3DFC6EC32A3B0EAA008D9692 /* inftrees.h in Headers */,
+				3DFC6EC42A3B0EAA008D9692 /* trees.h in Headers */,
+				3DFC6EC52A3B0EAA008D9692 /* zconf.h in Headers */,
+				3DFC6EC62A3B0EAA008D9692 /* zlib.h in Headers */,
+				3DFC6EC72A3B0EAA008D9692 /* zutil.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -938,6 +1241,24 @@
 			productReference = 3DCA573024583673009F1E70 /* Doctor Mix AI Synth.vst */;
 			productType = "com.apple.product-type.bundle";
 		};
+		3DFC6E8F2A3B0EAA008D9692 /* AAX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFC6EF52A3B0EAA008D9692 /* Build configuration list for PBXNativeTarget "AAX" */;
+			buildPhases = (
+				3DFC6E902A3B0EAA008D9692 /* Headers */,
+				3DFC6EC92A3B0EAA008D9692 /* Sources */,
+				3DFC6EEC2A3B0EAA008D9692 /* Frameworks */,
+				3DFC6EEE2A3B0EAA008D9692 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AAX;
+			productName = AAX;
+			productReference = 3DFC6EF82A3B0EAA008D9692 /* Doctor Mix AI Synth.aaxplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -960,6 +1281,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				3DFC6E8F2A3B0EAA008D9692 /* AAX */,
 				3D43DA0F246E8C8D004AFF08 /* AU */,
 				3D144C5328C4F93B003FA6F7 /* CLAP */,
 				3DCA572F24583673009F1E70 /* VST2 */,
@@ -1004,6 +1326,19 @@
 				3D25414029A398F800CB37ED /* Background@2x.png in Resources */,
 				3D25414129A398F800CB37ED /* Switch@2x.png in Resources */,
 				3D25414229A398F800CB37ED /* Knob@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFC6EEE2A3B0EAA008D9692 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFC6EEF2A3B0EAA008D9692 /* Background.png in Resources */,
+				3DFC6EF02A3B0EAA008D9692 /* Switch.png in Resources */,
+				3DFC6EF12A3B0EAA008D9692 /* Knob.png in Resources */,
+				3DFC6EF22A3B0EAA008D9692 /* Background@2x.png in Resources */,
+				3DFC6EF32A3B0EAA008D9692 /* Switch@2x.png in Resources */,
+				3DFC6EF42A3B0EAA008D9692 /* Knob@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1143,6 +1478,74 @@
 				3D529CA324584F3500527485 /* inftrees.c in Sources */,
 				3D529C9424584F3500527485 /* trees.c in Sources */,
 				3D529CA424584F3500527485 /* zutil.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFC6EC92A3B0EAA008D9692 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFC6ECA2A3B0EAA008D9692 /* DrMixAISynth.cpp in Sources */,
+				3DFC6ECB2A3B0EAA008D9692 /* Hosts.cpp in Sources */,
+				3DFC6ECC2A3B0EAA008D9692 /* IControl.cpp in Sources */,
+				3DFC6ECD2A3B0EAA008D9692 /* IGraphics.cpp in Sources */,
+				3DFC6ECE2A3B0EAA008D9692 /* IGraphicsCocoa.mm in Sources */,
+				3DFC6ECF2A3B0EAA008D9692 /* IGraphicsMac.mm in Sources */,
+				3DFC6ED02A3B0EAA008D9692 /* IParam.cpp in Sources */,
+				3DFC6EFE2A3B1022008D9692 /* IPlugAAX.cpp in Sources */,
+				3DFC6ED12A3B0EAA008D9692 /* IPlugBase.cpp in Sources */,
+				3DFC6ED32A3B0EAA008D9692 /* IPlugStructs.cpp in Sources */,
+				3DFC6ED42A3B0EAA008D9692 /* png.c in Sources */,
+				3DFC6ED52A3B0EAA008D9692 /* pngerror.c in Sources */,
+				3DFC6ED62A3B0EAA008D9692 /* pngget.c in Sources */,
+				3DFC6ED72A3B0EAA008D9692 /* pngmem.c in Sources */,
+				3DFC6ED82A3B0EAA008D9692 /* pngread.c in Sources */,
+				3DFC6ED92A3B0EAA008D9692 /* pngrio.c in Sources */,
+				3DFC6EDA2A3B0EAA008D9692 /* pngrtran.c in Sources */,
+				3DFC6EDB2A3B0EAA008D9692 /* pngrutil.c in Sources */,
+				3DFC6EDC2A3B0EAA008D9692 /* pngset.c in Sources */,
+				3DFC6EDD2A3B0EAA008D9692 /* pngtrans.c in Sources */,
+				3DFC6EDE2A3B0EAA008D9692 /* lice.cpp in Sources */,
+				3DFC6EDF2A3B0EAA008D9692 /* lice_arc.cpp in Sources */,
+				3DFC6EE02A3B0EAA008D9692 /* lice_line.cpp in Sources */,
+				3DFC6EE12A3B0EAA008D9692 /* lice_png.cpp in Sources */,
+				3DFC6EE22A3B0EAA008D9692 /* lice_textnew.cpp in Sources */,
+				3DFC6EE32A3B0EAA008D9692 /* swell-gdi.mm in Sources */,
+				3DFC6EE42A3B0EAA008D9692 /* adler32.c in Sources */,
+				3DFC6EE52A3B0EAA008D9692 /* crc32.c in Sources */,
+				3DFC6EE62A3B0EAA008D9692 /* infback.c in Sources */,
+				3DFC6EE72A3B0EAA008D9692 /* inffast.c in Sources */,
+				3DFC6EE82A3B0EAA008D9692 /* inflate.c in Sources */,
+				3DFC6EE92A3B0EAA008D9692 /* inftrees.c in Sources */,
+				3DFC6EEA2A3B0EAA008D9692 /* trees.c in Sources */,
+				3DFC6EEB2A3B0EAA008D9692 /* zutil.c in Sources */,
+				3DFC6F062A3B10C4008D9692 /* AAX_Exports.cpp in Sources */,
+				3DFC6F392A3B1126008D9692 /* AAX_CACFUnknown.cpp in Sources */,
+				3DFC6F372A3B1126008D9692 /* AAX_CChunkDataParser.cpp in Sources */,
+				3DFC6F242A3B1126008D9692 /* AAX_CEffectGUI.cpp in Sources */,
+				3DFC6F2D2A3B1126008D9692 /* AAX_CEffectParameters.cpp in Sources */,
+				3DFC6F2E2A3B1126008D9692 /* AAX_CHostServices.cpp in Sources */,
+				3DFC6F2C2A3B1126008D9692 /* AAX_CMutex.cpp in Sources */,
+				3DFC6F232A3B1126008D9692 /* AAX_CPacketDispatcher.cpp in Sources */,
+				3DFC6F212A3B1126008D9692 /* AAX_CParameter.cpp in Sources */,
+				3DFC6F292A3B1126008D9692 /* AAX_CParameterManager.cpp in Sources */,
+				3DFC6F302A3B1126008D9692 /* AAX_CString.cpp in Sources */,
+				3DFC6F332A3B1126008D9692 /* AAX_CUIDs.cpp in Sources */,
+				3DFC6F222A3B1126008D9692 /* AAX_IEffectGUI.cpp in Sources */,
+				3DFC6F312A3B1126008D9692 /* AAX_IEffectParameters.cpp in Sources */,
+				3DFC6F272A3B1126008D9692 /* AAX_Init.cpp in Sources */,
+				3DFC6F362A3B1126008D9692 /* AAX_VAutomationDelegate.cpp in Sources */,
+				3DFC6F322A3B1126008D9692 /* AAX_VCollection.cpp in Sources */,
+				3DFC6F352A3B1126008D9692 /* AAX_VComponentDescriptor.cpp in Sources */,
+				3DFC6F382A3B1126008D9692 /* AAX_VController.cpp in Sources */,
+				3DFC6F262A3B1126008D9692 /* AAX_VDescriptionHost.cpp in Sources */,
+				3DFC6F2F2A3B1126008D9692 /* AAX_VEffectDescriptor.cpp in Sources */,
+				3DFC6F252A3B1126008D9692 /* AAX_VFeatureInfo.cpp in Sources */,
+				3DFC6F342A3B1126008D9692 /* AAX_VHostServices.cpp in Sources */,
+				3DFC6F2B2A3B1126008D9692 /* AAX_VPageTable.cpp in Sources */,
+				3DFC6F282A3B1126008D9692 /* AAX_VPropertyMap.cpp in Sources */,
+				3DFC6F3A2A3B1126008D9692 /* AAX_VTransport.cpp in Sources */,
+				3DFC6F2A2A3B1126008D9692 /* AAX_VViewContainer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1306,6 +1709,40 @@
 			};
 			name = Release;
 		};
+		3DFC6EF62A3B0EAA008D9692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				DSTROOT = /;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_AAX",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/AAX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Application Support/Avid/Audio/Plug-Ins";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Martinic.aax.$(PROJECT_NAME:rfc1034identifier)";
+				WRAPPER_EXTENSION = aaxplugin;
+			};
+			name = Debug;
+		};
+		3DFC6EF72A3B0EAA008D9692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				DSTROOT = /;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_AAX",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/AAX-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Application Support/Avid/Audio/Plug-Ins";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Martinic.aax.$(PROJECT_NAME:rfc1034identifier)";
+				WRAPPER_EXTENSION = aaxplugin;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1341,6 +1778,15 @@
 			buildConfigurations = (
 				3DCA573524583673009F1E70 /* Debug */,
 				3DCA573624583673009F1E70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DFC6EF52A3B0EAA008D9692 /* Build configuration list for PBXNativeTarget "AAX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFC6EF62A3B0EAA008D9692 /* Debug */,
+				3DFC6EF72A3B0EAA008D9692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
