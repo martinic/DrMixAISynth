@@ -99,6 +99,9 @@ iplug : "$(OUTDIR)" $(IPLUG) "$(OUTDIR)/IPlugCLAP.obj" "$(OUTDIR)/IPlugVST2.obj"
 {IPlug}.cpp{$(OUTDIR)}.obj ::
 	$(CPP) $(CPPFLAGS) /Fo"$(OUTDIR)/" $<
 
+"$(OUTDIR)/IPlugVST2.obj" : IPlug/IPlugVST2.cpp
+	$(CPP) $(CPPFLAGS) /D IPLUG_LEGACY_PLUG_VER /Fo"$(OUTDIR)/" $**
+
 LIBPNG = \
 "$(OUTDIR)/png.obj" \
 "$(OUTDIR)/pngerror.obj" \

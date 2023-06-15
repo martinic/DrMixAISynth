@@ -139,7 +139,7 @@
 		3D529C3024584A5200527485 /* IGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C1924584A5000527485 /* IGraphics.cpp */; };
 		3D529C3124584A5200527485 /* Hosts.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C1A24584A5000527485 /* Hosts.h */; };
 		3D529C3224584A5200527485 /* IControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C1B24584A5000527485 /* IControl.cpp */; };
-		3D529C3424584A5200527485 /* IPlugVST2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C1D24584A5000527485 /* IPlugVST2.cpp */; };
+		3D529C3424584A5200527485 /* IPlugVST2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D529C1D24584A5000527485 /* IPlugVST2.cpp */; settings = {COMPILER_FLAGS = "-DIPLUG_LEGACY_PLUG_VER"; }; };
 		3D529C3524584A5200527485 /* IGraphicsMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C1E24584A5000527485 /* IGraphicsMac.h */; };
 		3D529C3624584A5200527485 /* IPlug_include_in_plug_hdr.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C1F24584A5000527485 /* IPlug_include_in_plug_hdr.h */; };
 		3D529C3724584A5200527485 /* IPlug_include_in_plug_src.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D529C2024584A5100527485 /* IPlug_include_in_plug_src.h */; };
