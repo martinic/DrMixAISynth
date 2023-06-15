@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D144C5328C4F93B003FA6F7"
-               BuildableName = "DrMixAISynth.clap"
+               BuildableName = "Doctor Mix AI Synth.clap"
                BlueprintName = "CLAP"
                ReferencedContainer = "container:DrMixAISynth.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D144C5328C4F93B003FA6F7"
-            BuildableName = "DrMixAISynth.clap"
+            BuildableName = "Doctor Mix AI Synth.clap"
             BlueprintName = "CLAP"
             ReferencedContainer = "container:DrMixAISynth.xcodeproj">
          </BuildableReference>

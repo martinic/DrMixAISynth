@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D43DA0F246E8C8D004AFF08"
-               BuildableName = "DrMixAISynth.component"
+               BuildableName = "Doctor Mix AI Synth.component"
                BlueprintName = "AU"
                ReferencedContainer = "container:DrMixAISynth.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D43DA0F246E8C8D004AFF08"
-            BuildableName = "DrMixAISynth.component"
+            BuildableName = "Doctor Mix AI Synth.component"
             BlueprintName = "AU"
             ReferencedContainer = "container:DrMixAISynth.xcodeproj">
          </BuildableReference>
