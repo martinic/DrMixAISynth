@@ -1,6 +1,6 @@
 # Doctor Mix AI Synth
 
-Doctor Mix AI Synth is a proof-of-concept CLAP/VST2/AU synthesizer plugin developed by [Doctor Mix](https://www.youtube.com/@Doctormix) and [Martinic](https://www.martinic.com/), coded with the help of the AI chatbot [ChatGPT](https://chat.openai.com/).
+Doctor Mix AI Synth is a proof-of-concept CLAP/VST2/AU/AAX synthesizer plugin developed by [Doctor Mix](https://www.youtube.com/@Doctormix) and [Martinic](https://www.martinic.com/), coded with the help of the AI chatbot [ChatGPT](https://chat.openai.com/).
 
 ## How to build & run
 
