@@ -164,6 +164,11 @@ public:
 
   void setAmplitude(float amplitude) { m_amplitude = amplitude; }
 
+  void setSampleRate(float sampleRate) {
+    m_sampleRate = sampleRate;
+    m_phaseIncrement = m_frequency / m_sampleRate;
+  }
+
   float getNextSample() {
     float output = m_amplitude * sin(2.0 * M_PI * m_phase);
     m_phase += m_phaseIncrement;
