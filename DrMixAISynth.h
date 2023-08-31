@@ -208,6 +208,8 @@ public:
   {
     m_sawtooth.setSampleRate(rate);
     m_filter.setSampleRate(rate);
+    m_lfo.setSampleRate(rate);
+    m_sampleRate = rate;
   }
 
   void SetFrequency(double frequency) { m_sawtooth.setFrequency(frequency); }
