@@ -39,6 +39,7 @@ CONFIGURATION = Release
 
 !IF DEFINED(NDEBUG) && "$(NDEBUG)" != "0"
 CFLAGS = $(CFLAGS) /D NDEBUG /GL
+VST3FLAGS = /D RELEASE
 LINKFLAGS = $(LINKFLAGS) /ltcg
 !ELSE
 LINKFLAGS = $(LINKFLAGS) /debug
@@ -52,6 +53,10 @@ LINKFLAGS = $(LINKFLAGS) /incremental:no /opt:ref /opt:icf /defaultlib:libcmt
 CFLAGS = $(CFLAGS) /D _DEBUG /D DEBUG /RTCsu /MTd
 LINKFLAGS = $(LINKFLAGS) /debug
 
+!ENDIF
+
+!IF !DEFINED(VST3FLAGS)
+VST3FLAGS = /D DEVELOPMENT
 !ENDIF
 
 OUTDIR = $(PLATFORM)/$(CONFIGURATION)
@@ -90,6 +95,11 @@ $(IPLUGINC)
 "$(OUTDIR)/$(PROJECT)_VST2.obj" : $(SOURCES) IPlug/IPlugVST2.h
 	$(CPP) $(CPPFLAGS) /D VST2_API /wd4244 /Fo$@ /Fa"$(OUTDIR)/_$(PROJECT)_VST2.asm" "$(PROJECT).cpp"
 
+VST3FLAGS = $(VST3FLAGS) /I VST3_SDK
+
+"$(OUTDIR)/$(PROJECT)_VST3.obj" : $(SOURCES) IPlug/IPlugVST3.h
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /D VST3_API /wd4244 /Fo$@ /Fa"$(OUTDIR)/_$(PROJECT)_VST3.asm" "$(PROJECT).cpp"
+
 AAXFLAGS = /I AAX_SDK/Interfaces/ACF /FIIPlug/IPlugAAX_Assert.h
 
 "$(OUTDIR)/$(PROJECT)_AAX.obj" : $(SOURCES) IPlug/IPlugAAX.h
@@ -113,6 +123,9 @@ img/Knob@2x.png
 "$(OUTDIR)/$(PROJECT)_VST2.res" : $(RESOURCES)
 	$(RC) $(RCFLAGS) /D VST2_API /fo$@ "$(PROJECT).rc"
 
+"$(OUTDIR)/$(PROJECT)_VST3.res" : $(RESOURCES)
+	$(RC) $(RCFLAGS) /D VST3_API /fo$@ "$(PROJECT).rc"
+
 "$(OUTDIR)/$(PROJECT)_AAX.res" : $(RESOURCES)
 	$(RC) $(RCFLAGS) /D AAX_API /fo$@ "$(PROJECT).rc"
 
@@ -125,13 +138,16 @@ IPLUGOBJ = \
 "$(OUTDIR)/IPlugBase.obj" \
 "$(OUTDIR)/IPlugStructs.obj"
 
-iplug : "$(OUTDIR)" $(IPLUGOBJ) "$(OUTDIR)/IPlugCLAP.obj" "$(OUTDIR)/IPlugVST2.obj" "$(OUTDIR)/IPlugAAX.obj"
+iplug : "$(OUTDIR)" $(IPLUGOBJ) "$(OUTDIR)/IPlugVST2.obj" "$(OUTDIR)/IPlugVST3.obj" "$(OUTDIR)/IPlugCLAP.obj" "$(OUTDIR)/IPlugAAX.obj"
 
 {IPlug}.cpp{$(OUTDIR)}.obj ::
 	$(CPP) $(CPPFLAGS) /Fo"$(OUTDIR)/" $<
 
 "$(OUTDIR)/IPlugVST2.obj" : IPlug/IPlugVST2.cpp
 	$(CPP) $(CPPFLAGS) /D IPLUG_LEGACY_PLUG_VER /Fo"$(OUTDIR)/" $**
+
+"$(OUTDIR)/IPlugVST3.obj" : IPlug/IPlugVST3.cpp
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /D IPLUG_NO_MIDI_CC_PARAMS /Fo"$(OUTDIR)/" $**
 
 "$(OUTDIR)/IPlugAAX.obj" : IPlug/IPlugAAX.cpp
 	$(CPP) $(CPPFLAGS) $(AAXFLAGS) /Fo"$(OUTDIR)/" $**
@@ -179,6 +195,51 @@ zlib : "$(OUTDIR)" $(ZLIBOBJ)
 
 {WDL/zlib}.c{$(OUTDIR)}.obj ::
 	$(CC) $(CFLAGS) /D NO_GZCOMPRESS /D Z_SOLO /Fo"$(OUTDIR)/" $<
+
+VST3OBJ = \
+"$(OUTDIR)/baseiids.obj" \
+"$(OUTDIR)/fbuffer.obj" \
+"$(OUTDIR)/fdebug.obj" \
+"$(OUTDIR)/fobject.obj" \
+"$(OUTDIR)/fstreamer.obj" \
+"$(OUTDIR)/fstring.obj" \
+"$(OUTDIR)/updatehandler.obj" \
+"$(OUTDIR)/flock.obj" \
+"$(OUTDIR)/coreiids.obj" \
+"$(OUTDIR)/funknown.obj" \
+"$(OUTDIR)/ustring.obj" \
+"$(OUTDIR)/commoniids.obj" \
+"$(OUTDIR)/pluginview.obj" \
+"$(OUTDIR)/pluginfactory.obj" \
+"$(OUTDIR)/vstbus.obj" \
+"$(OUTDIR)/vstcomponentbase.obj" \
+"$(OUTDIR)/vstinitiids.obj" \
+"$(OUTDIR)/vstparameters.obj" \
+"$(OUTDIR)/vstsinglecomponenteffect.obj" \
+"$(OUTDIR)/vst2persistence.obj"
+
+vst3sdk : "$(OUTDIR)" $(VST3OBJ)
+
+{VST3_SDK/base/source}.cpp{$(OUTDIR)}.obj ::
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /Fo"$(OUTDIR)/" $<
+
+{VST3_SDK/base/thread/source}.cpp{$(OUTDIR)}.obj ::
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /Fo"$(OUTDIR)/" $<
+
+{VST3_SDK/pluginterfaces/base}.cpp{$(OUTDIR)}.obj ::
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /Fo"$(OUTDIR)/" $<
+
+{VST3_SDK/public.sdk/source/common}.cpp{$(OUTDIR)}.obj ::
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /Fo"$(OUTDIR)/" $<
+
+{VST3_SDK/public.sdk/source/main}.cpp{$(OUTDIR)}.obj ::
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /Fo"$(OUTDIR)/" $<
+
+{VST3_SDK/public.sdk/source/vst}.cpp{$(OUTDIR)}.obj ::
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /Fo"$(OUTDIR)/" $<
+
+{VST3_SDK/public.sdk/source/vst/utility}.cpp{$(OUTDIR)}.obj ::
+	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /Fo"$(OUTDIR)/" $<
 
 AAXOBJ = \
 "$(OUTDIR)/AAX_CACFUnknown.obj" \
@@ -243,6 +304,10 @@ wininet.lib
 	@echo ^ ^ ^ ^ ^ ^ ^ ^ link $(LINKFLAGS) /out:$@ "$(OUTDIR)/$(PROJECT)_VST2.obj" ...
 	@link $(LINKFLAGS) /out:$@ /implib:"$(OUTDIR)/$(PROJECT)_VST2.lib" $** $(LIBS)
 
+"$(OUTDIR)/$(OUTFILE).vst3" : "$(OUTDIR)/$(PROJECT)_VST3.obj" "$(OUTDIR)/$(PROJECT)_VST3.res" "$(OUTDIR)/IPlugVST3.obj" $(OBJECTS) $(VST3OBJ)
+	@echo ^ ^ ^ ^ ^ ^ ^ ^ link $(LINKFLAGS) /out:$@ "$(OUTDIR)/$(PROJECT)_VST3.obj" ...
+	@link $(LINKFLAGS) /out:$@ /implib:"$(OUTDIR)/$(PROJECT)_VST3.lib" $** $(LIBS)
+
 "$(OUTDIR)/$(OUTFILE).aaxplugin" : "$(OUTDIR)/$(PROJECT)_AAX.obj" "$(OUTDIR)/$(PROJECT)_AAX.res" "$(OUTDIR)/IPlugAAX.obj" $(OBJECTS) $(AAXOBJ)
 	@echo ^ ^ ^ ^ ^ ^ ^ ^ link $(LINKFLAGS) /out:$@ "$(OUTDIR)/$(PROJECT)_AAX.obj" ...
 	@link $(LINKFLAGS) /out:$@ /implib:"$(OUTDIR)/$(PROJECT)_AAX.lib" $** $(LIBS)
@@ -251,9 +316,11 @@ clap : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).clap"
 
 vst2 : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).dll"
 
+vst3 : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).vst3"
+
 aax : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).aaxplugin"
 
-dist : clap vst2
+dist : clap vst2 vst3
 !IFDEF REMINDER
 	@echo.
 !	IF "$(PLATFORM)" == "x64"
