@@ -21,8 +21,9 @@
 	// To-do: Set Product Bundle Indentifier in Xcode project to
 	// BUNDLE_DOMAIN.aax.BUNDLE_NAME (AAX target),
 	// BUNDLE_DOMAIN.audiounit.BUNDLE_NAME (AU target),
-	// BUNDLE_DOMAIN.clap.BUNDLE_NAME (CLAP target), and
-	// BUNDLE_DOMAIN.vst.BUNDLE_NAME (VST2 target).
+	// BUNDLE_DOMAIN.clap.BUNDLE_NAME (CLAP target),
+	// BUNDLE_DOMAIN.vst.BUNDLE_NAME (VST2 target), and
+	// BUNDLE_DOMAIN.vst3.BUNDLE_NAME (VST3 target).
 
 	// No spaces.
 	#define PLUG_FACTORY    DrMixAISynth_Factory
@@ -72,6 +73,22 @@
 // To-do: Set AudioComponents manufacturer and subtype in AU-Info.plist to
 // PLUG_MFR_ID and PLUG_UNIQUE_ID.
 
+// 35c44720-77d0-4627-8be4-14a75da952ec (source: https://guidgenerator.com/)
+#define PLUG_UNIQUE_GUID 0x35C44720, 0x77D04627, 0x8BE414A7, 0x5DA952EC
+// 4ef97fce-de50-427c-9b73-2af3281326d5
+#define VST3_COMPAT_GUID 0x4EF97FCE, 0xDE50427C, 0x9B732AF3, 0x281326D5
+
+// Cubase VST2 -> VST3 compatibility (double quotes, no commas).
+#define VST3_COMPAT_OLD_GUIDS \
+	"56535464726131646F63746F72206D69" /* VERSIONINFO_ORG_FILE */ \
+	"5653546472613164726D697861697379" /* BUNDLE_NAME */
+
+// TN: PLUG_UNIQUE_GUID might override/invalidate VST2 PLUG_UNIQUE_ID, which
+// breaks compatibility with Doctor Mix AI Synth v1.1.0 and older.
+#ifdef VST2_API
+	#undef PLUG_UNIQUE_GUID
+#endif
+
 // Plugin I/O config.
 #define PLUG_CHANNEL_IO "0-2"
 
@@ -85,6 +102,9 @@
 
 // To-do: Set AudioComponents type in AU-Info.plist to aufx (audio effect),
 // aumu (instrument), or aumf (audio effect with MIDI input).
+
+#define PLUG_MFR_URL   "https://www.martinic.com/"
+#define PLUG_MFR_EMAIL "info@martinic.com"
 
 // Unique IDs for each image resource, bit 0 is scale (0 = full, 1 = half).
 
