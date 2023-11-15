@@ -49,7 +49,9 @@ BEGIN
 			#endif
 
 			VALUE "OriginalFilename", VERSIONINFO_ORG_FILE
-			#ifdef CLAP_API
+			#ifdef AAX_API
+				".aaxplugin"
+			#elif defined(CLAP_API)
 				".clap"
 			#else
 				".dll"
