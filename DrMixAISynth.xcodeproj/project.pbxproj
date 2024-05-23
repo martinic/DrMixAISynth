@@ -1621,6 +1621,7 @@
 		3DCA572824583673009F1E70 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Doctor Mix";
 			};
