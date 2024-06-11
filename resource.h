@@ -40,12 +40,12 @@
 #endif
 
 // Interpreted as 0xMajrMnBg.
-#define PLUG_VER  0x00010200 // 1.2.0
-#define VERSIONINFO_VERSION     1,2,0,0
-#define VERSIONINFO_STR        "1.2.0"
+#define PLUG_VER  0x00010200 // 1.2.1
+#define VERSIONINFO_VERSION     1,2,1,0
+#define VERSIONINFO_STR        "1.2.1"
 
 // #define VERSIONINFO_PRERELEASE // Define if alpha, beta, or RC
-#define VERSIONINFO_COPYRIGHT "2023 Martinic"
+#define VERSIONINFO_COPYRIGHT "2023, 2024 Martinic"
 
 // Windows version info resource (optional).
 #ifdef _WIN32
