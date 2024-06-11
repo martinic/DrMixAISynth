@@ -2077,6 +2077,7 @@
 					SWELL_NO_METAL,
 					"$(inherited)",
 				);
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = .;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023, 2024 Martinic";
@@ -2121,6 +2122,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = .;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023, 2024 Martinic";
