@@ -121,6 +121,11 @@
 		3D27758325162D6300F354B7 /* IMidiQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27758125162D6300F354B7 /* IMidiQueue.h */; };
 		3D27758525162F8400F354B7 /* denormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27758425162F8300F354B7 /* denormal.h */; };
 		3D27758625162F8400F354B7 /* denormal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D27758425162F8300F354B7 /* denormal.h */; };
+		3D319BA12C188F5E00A0014F /* utf8_extended.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D319BA02C188F5E00A0014F /* utf8_extended.h */; };
+		3D319BA22C188F5E00A0014F /* utf8_extended.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D319BA02C188F5E00A0014F /* utf8_extended.h */; };
+		3D319BA32C188F5E00A0014F /* utf8_extended.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D319BA02C188F5E00A0014F /* utf8_extended.h */; };
+		3D319BA42C188F5E00A0014F /* utf8_extended.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D319BA02C188F5E00A0014F /* utf8_extended.h */; };
+		3D319BA52C188F5E00A0014F /* utf8_extended.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D319BA02C188F5E00A0014F /* utf8_extended.h */; };
 		3D31A5DD246D7760000BAC95 /* ptrlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D1246D7760000BAC95 /* ptrlist.h */; };
 		3D31A5DE246D7760000BAC95 /* heapbuf.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D2246D7760000BAC95 /* heapbuf.h */; };
 		3D31A5DF246D7760000BAC95 /* db2val.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D31A5D3246D7760000BAC95 /* db2val.h */; };
@@ -564,6 +569,7 @@
 		3D25412D29A3985500CB37ED /* Switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch@2x.png"; path = "img/Switch@2x.png"; sourceTree = "<group>"; };
 		3D27758125162D6300F354B7 /* IMidiQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMidiQueue.h; path = IPlug/IMidiQueue.h; sourceTree = "<group>"; };
 		3D27758425162F8300F354B7 /* denormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = denormal.h; path = WDL/denormal.h; sourceTree = "<group>"; };
+		3D319BA02C188F5E00A0014F /* utf8_extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utf8_extended.h; path = WDL/utf8_extended.h; sourceTree = "<group>"; };
 		3D31A5D1246D7760000BAC95 /* ptrlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ptrlist.h; path = WDL/ptrlist.h; sourceTree = "<group>"; };
 		3D31A5D2246D7760000BAC95 /* heapbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = heapbuf.h; path = WDL/heapbuf.h; sourceTree = "<group>"; };
 		3D31A5D3246D7760000BAC95 /* db2val.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = db2val.h; path = WDL/db2val.h; sourceTree = "<group>"; };
@@ -936,6 +942,7 @@
 				3D31A5D1246D7760000BAC95 /* ptrlist.h */,
 				3D31A5D5246D7760000BAC95 /* queue.h */,
 				3D529CA82458525C00527485 /* swell */,
+				3D319BA02C188F5E00A0014F /* utf8_extended.h */,
 				3D31A5D6246D7760000BAC95 /* wdlatomic.h */,
 				3D31A5D7246D7760000BAC95 /* wdlcstring.h */,
 				3D31A5D9246D7760000BAC95 /* wdlendian.h */,
@@ -1250,6 +1257,7 @@
 				3D144CA128C4F93B003FA6F7 /* swell-gdi-internalpool.h in Headers */,
 				3D144CA228C4F93B003FA6F7 /* swell-internal.h in Headers */,
 				3D144CA328C4F93B003FA6F7 /* swell-types.h in Headers */,
+				3D319BA32C188F5E00A0014F /* utf8_extended.h in Headers */,
 				3D144CA428C4F93B003FA6F7 /* wdlatomic.h in Headers */,
 				3D144CA528C4F93B003FA6F7 /* wdlcstring.h in Headers */,
 				3D144CA628C4F93B003FA6F7 /* wdlendian.h in Headers */,
@@ -1314,6 +1322,7 @@
 				3D738585246E95D500582D74 /* swell-gdi-internalpool.h in Headers */,
 				3D738586246E95D500582D74 /* swell-internal.h in Headers */,
 				3D738588246E95D500582D74 /* swell-types.h in Headers */,
+				3D319BA22C188F5E00A0014F /* utf8_extended.h in Headers */,
 				3D738590246E95E100582D74 /* wdlatomic.h in Headers */,
 				3D738591246E95E100582D74 /* wdlcstring.h in Headers */,
 				3D738592246E95E100582D74 /* wdlendian.h in Headers */,
@@ -1376,6 +1385,7 @@
 				3D00CE9124603C2000E2E5A4 /* swell-gdi-internalpool.h in Headers */,
 				3D529CAF245853D000527485 /* swell-internal.h in Headers */,
 				3D529CB2245853F000527485 /* swell-types.h in Headers */,
+				3D319BA42C188F5E00A0014F /* utf8_extended.h in Headers */,
 				3D31A5E2246D7760000BAC95 /* wdlatomic.h in Headers */,
 				3D31A5E3246D7760000BAC95 /* wdlcstring.h in Headers */,
 				3D31A5E5246D7760000BAC95 /* wdlendian.h in Headers */,
@@ -1440,6 +1450,7 @@
 				3DD24C4D2B04D65E00F3D2CA /* swell-gdi-internalpool.h in Headers */,
 				3DD24C4E2B04D65E00F3D2CA /* swell-internal.h in Headers */,
 				3DD24C4F2B04D65E00F3D2CA /* swell-types.h in Headers */,
+				3D319BA52C188F5E00A0014F /* utf8_extended.h in Headers */,
 				3DD24C502B04D65E00F3D2CA /* wdlatomic.h in Headers */,
 				3DD24C512B04D65E00F3D2CA /* wdlcstring.h in Headers */,
 				3DD24C522B04D65E00F3D2CA /* wdlendian.h in Headers */,
@@ -1504,6 +1515,7 @@
 				3DFC6EB72A3B0EAA008D9692 /* swell-gdi-internalpool.h in Headers */,
 				3DFC6EB82A3B0EAA008D9692 /* swell-internal.h in Headers */,
 				3DFC6EB92A3B0EAA008D9692 /* swell-types.h in Headers */,
+				3D319BA12C188F5E00A0014F /* utf8_extended.h in Headers */,
 				3DFC6EBA2A3B0EAA008D9692 /* wdlatomic.h in Headers */,
 				3DFC6EBB2A3B0EAA008D9692 /* wdlcstring.h in Headers */,
 				3DFC6EBC2A3B0EAA008D9692 /* wdlendian.h in Headers */,
