@@ -100,7 +100,7 @@ VST3FLAGS = $(VST3FLAGS) /I VST3_SDK
 "$(OUTDIR)/$(PROJECT)_VST3.obj" : $(SOURCES) IPlug/IPlugVST3.h
 	$(CPP) $(CPPFLAGS) $(VST3FLAGS) /D VST3_API /wd4244 /Fo$@ /Fa"$(OUTDIR)/_$(PROJECT)_VST3.asm" "$(PROJECT).cpp"
 
-AAXFLAGS = /I AAX_SDK/Interfaces/ACF /FIIPlug/IPlugAAX_Assert.h /wd5272
+AAXFLAGS = /I AAX_SDK/Interfaces/ACF /FIIPlug/IPlugAAX_Assert.h
 
 "$(OUTDIR)/$(PROJECT)_AAX.obj" : $(SOURCES) IPlug/IPlugAAX.h
 	$(CPP) $(CPPFLAGS) $(AAXFLAGS) /D AAX_API /wd4244 /Fo$@ /Fa"$(OUTDIR)/_$(PROJECT)_AAX.asm" "$(PROJECT).cpp"
