@@ -2183,7 +2183,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				DSTROOT = /;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_AAX",
@@ -2191,6 +2190,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AAX-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Application Support/Avid/Audio/Plug-Ins";
+				INSTALL_ROOT = /;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Martinic.aax.$(PROJECT_NAME:rfc1034identifier)";
 				WRAPPER_EXTENSION = aaxplugin;
 			};
@@ -2200,7 +2200,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				DSTROOT = /;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"IGRAPHICS_COCOA=$(PRODUCT_NAME:identifier)_AAX",
@@ -2208,6 +2207,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AAX-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Application Support/Avid/Audio/Plug-Ins";
+				INSTALL_ROOT = /;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Martinic.aax.$(PROJECT_NAME:rfc1034identifier)";
 				WRAPPER_EXTENSION = aaxplugin;
 			};
