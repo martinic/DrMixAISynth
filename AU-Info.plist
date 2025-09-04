@@ -20,7 +20,7 @@
 			<key>type</key>
 			<string>aumu</string>
 			<key>version</key>
-			<integer>0x00010202</integer>
+			<integer>0x00010203</integer>
 		</dict>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
