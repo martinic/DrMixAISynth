@@ -14,8 +14,8 @@ goto :eof
 set nmake=nmake /nologo config=Release
 
 %nmake% clean || goto :eof
-%nmake% dist ndebug=1 reminder="Reminder: Don't forget to also make x64_or_x86 distribution."
+%nmake% dist ndebug=1
 goto :eof
 
 :clean
-for %%i in (x64 Win32) do if exist "%%i" rmdir /q /s "%%i"
+for %%i in (x64 ARM64EC Win32) do if exist "%%i" rmdir /q /s "%%i"
