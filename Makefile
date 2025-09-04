@@ -9,19 +9,25 @@ CFLAGS = $(CFLAGS) /D WDL_DENORMAL_WANTS_SCOPED_FTZ
 CPPFLAGS = /EHsc $(CFLAGS)
 
 RCFLAGS = /nologo
-LINKFLAGS = /dll /subsystem:windows /dynamicbase:no /manifest:no /nologo
+LINKFLAGS = /dll /subsystem:windows /manifest:no /nologo
 
 !IF "$(TARGET_CPU)" == "x64" || "$(CPU)" == "AMD64" || "$(PLATFORM)" == "x64" || "$(PLATFORM)" == "X64"
 
 PLATFORM = x64
 CFLAGS = $(CFLAGS) /favor:blend
-LINKFLAGS = $(LINKFLAGS) /machine:x64
+LINKFLAGS = $(LINKFLAGS) /machine:x64 /dynamicbase:no
+
+!ELSE IF "$(PLATFORM)" == "arm64"
+
+PLATFORM = ARM64EC
+CFLAGS = $(CFLAGS) /arm64EC
+LINKFLAGS = $(LINKFLAGS) /machine:arm64ec
 
 !ELSE
 
 PLATFORM = Win32
 CFLAGS = $(CFLAGS) /arch:SSE2
-LINKFLAGS = $(LINKFLAGS) /machine:x86
+LINKFLAGS = $(LINKFLAGS) /machine:x86 /dynamicbase:no
 
 !ENDIF
 
@@ -64,7 +70,7 @@ OUTDIR = $(PLATFORM)/$(CONFIGURATION)
 !MESSAGE $(PROJECT) - $(CONFIGURATION)|$(PLATFORM)
 !MESSAGE
 
-all : clap
+default : clap
 
 "$(OUTDIR)" :
 !IF !EXIST("$(OUTDIR)/")
@@ -321,14 +327,6 @@ vst3 : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).vst3"
 aax : "$(OUTDIR)" "$(OUTDIR)/$(OUTFILE).aaxplugin"
 
 dist : clap vst2 vst3
-!IFDEF REMINDER
-	@echo.
-!	IF "$(PLATFORM)" == "x64"
-	@echo $(REMINDER:x64_or_x86=x86)
-!	ELSE
-	@echo $(REMINDER:x64_or_x86=x64)
-!	ENDIF
-!ENDIF
 
 clean :
 !IF EXIST("$(OUTDIR)/")
