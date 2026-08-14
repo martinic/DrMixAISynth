@@ -2081,11 +2081,11 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = .;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023-2025 Martinic";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023-2026 Martinic";
 				INFOPLIST_PREPROCESS = YES;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_NAME = "Doctor Mix AI Synth";
@@ -2127,11 +2127,11 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = .;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023-2025 Martinic";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023-2026 Martinic";
 				INFOPLIST_PREPROCESS = YES;
 				MACH_O_TYPE = mh_bundle;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_NAME = "Doctor Mix AI Synth";
 				SDKROOT = macosx;
